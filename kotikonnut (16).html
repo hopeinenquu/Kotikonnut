@@ -1,0 +1,2125 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO: Base meta -->
+<title>Kotikonnut — Löydä paikkasi</title>
+<meta name="description" content="Kotikonnut on suomalainen naapurustojen arvostelupalvelu. Tutustu eri asuinalueisiin, lue asukkaiden kokemuksia ja löydä unelmiesi naapurusto.">
+<meta name="keywords" content="naapurusto, asuinalue, arvostelu, Helsinki, Espoo, Vantaa, asuminen, kaupunginosa">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://hopeinenquu.github.io/Kotikulmat/">
+<link rel="sitemap" type="application/xml" href="/Kotikulmat/sitemap.xml">
+
+<!-- SEO: Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kotikonnut">
+<meta property="og:title" content="Kotikonnut — Löydä paikkasi">
+<meta property="og:description" content="Suomalainen naapurustojen arvostelupalvelu. Tutustu eri asuinalueisiin asukkaiden arvostelujen kautta.">
+<meta property="og:url" content="https://hopeinenquu.github.io/Kotikulmat/">
+<meta property="og:locale" content="fi_FI">
+
+<!-- SEO: Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kotikonnut — Löydä paikkasi">
+<meta name="twitter:description" content="Suomalainen naapurustojen arvostelupalvelu. Tutustu eri asuinalueisiin asukkaiden arvostelujen kautta.">
+
+<!-- SEO: Schema.org WebSite -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Kotikonnut",
+  "url": "https://hopeinenquu.github.io/Kotikulmat/",
+  "description": "Suomalainen naapurustojen arvostelupalvelu",
+  "inLanguage": "fi",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://hopeinenquu.github.io/Kotikulmat/#{search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+<!-- Dynamic schema updated by JS for neighborhood pages -->
+<script type="application/ld+json" id="schemaNeighborhood"></script>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F4F1FA;
+  --fg:#332F3A;
+  --muted:#635F69;
+  --accent:#7C3AED;
+  --accent-2:#DB2777;
+  --accent-3:#0EA5E9;
+  --success:#10B981;
+  --warning:#F59E0B;
+  --surface:rgba(255,255,255,0.7);
+  --surface-solid:#fff;
+  --border:rgba(124,58,237,0.12);
+  --radius-xl:32px;
+  --radius-lg:24px;
+  --radius-md:20px;
+  --radius-sm:16px;
+  --shadow-card:16px 16px 32px rgba(160,150,180,0.2),-10px -10px 24px rgba(255,255,255,0.9),inset 6px 6px 12px rgba(139,92,246,0.03),inset -6px -6px 12px rgba(255,255,255,1);
+  --shadow-card-hover:20px 20px 40px rgba(160,150,180,0.28),-12px -12px 28px rgba(255,255,255,0.95),inset 6px 6px 12px rgba(139,92,246,0.04),inset -6px -6px 12px rgba(255,255,255,1);
+  --shadow-btn:12px 12px 24px rgba(139,92,246,0.3),-8px -8px 16px rgba(255,255,255,0.4),inset 4px 4px 8px rgba(255,255,255,0.4),inset -4px -4px 8px rgba(0,0,0,0.1);
+  --shadow-btn-hover:14px 14px 28px rgba(139,92,246,0.38),-10px -10px 20px rgba(255,255,255,0.5),inset 4px 4px 8px rgba(255,255,255,0.5),inset -4px -4px 8px rgba(0,0,0,0.08);
+  --shadow-pressed:inset 10px 10px 20px #d9d4e3,inset -10px -10px 20px #ffffff;
+  --shadow-deep:30px 30px 60px #cdc6d9,-30px -30px 60px #ffffff,inset 10px 10px 20px rgba(139,92,246,0.05),inset -10px -10px 20px rgba(255,255,255,0.8);
+  /* legacy aliases */
+  --dark:#332F3A;
+  --warm-gray:#635F69;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:'DM Sans',sans-serif;font-weight:400;min-height:100vh;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+/* BLOBS */
+.blobs{pointer-events:none;position:fixed;inset:0;overflow:hidden;z-index:0}
+.blob{position:absolute;border-radius:9999px;filter:blur(80px);opacity:0.12}
+.blob-1{width:70vw;height:70vw;max-width:700px;max-height:700px;background:#7C3AED;top:-15%;left:-15%;animation:clayFloat 10s ease-in-out infinite}
+.blob-2{width:60vw;height:60vw;max-width:600px;max-height:600px;background:#DB2777;top:20%;right:-15%;animation:clayFloat 12s ease-in-out infinite 2s}
+.blob-3{width:50vw;height:50vw;max-width:500px;max-height:500px;background:#0EA5E9;bottom:-10%;left:25%;animation:clayFloatAlt 9s ease-in-out infinite 4s}
+@keyframes clayFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-24px) rotate(2deg)}}
+@keyframes clayFloatAlt{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-18px) rotate(-2deg)}}
+@media(prefers-reduced-motion:reduce){.blob{animation:none}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(244,241,250,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px}
+.nav-logo{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;color:var(--fg);letter-spacing:-.02em;cursor:pointer;border:none;background:none}
+.nav-logo span{color:var(--accent)}
+.nav-actions{display:flex;gap:.6rem;align-items:center}
+.nav-btn{background:linear-gradient(135deg,#A78BFA,#7C3AED);color:#fff;border:none;padding:.5rem 1.2rem;border-radius:var(--radius-md);font-family:'DM Sans',sans-serif;font-size:.84rem;font-weight:700;cursor:pointer;letter-spacing:.01em;box-shadow:var(--shadow-btn);transition:all .2s}
+.nav-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-btn-hover)}
+.nav-btn:active{transform:scale(0.94);box-shadow:var(--shadow-pressed)}
+.nav-back{background:rgba(255,255,255,0.7);backdrop-filter:blur(10px);color:var(--muted);border:1px solid var(--border);padding:.45rem .9rem;border-radius:var(--radius-md);font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:.35rem;box-shadow:var(--shadow-card);transition:all .2s}
+.nav-back:hover{color:var(--fg);transform:translateY(-1px)}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:6rem 2.5rem 5rem;background:linear-gradient(135deg,#1a0533 0%,#0f0320 50%,#1a0533 100%)}
+.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(124,58,237,.35) 0%,transparent 60%),radial-gradient(ellipse at 80% 30%,rgba(219,39,119,.2) 0%,transparent 50%);pointer-events:none}
+.hero-inner{max-width:680px;position:relative;z-index:1;background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:2.2rem 2.8rem;border-radius:var(--radius-xl);border:1px solid rgba(255,255,255,0.1);-webkit-mask-image:radial-gradient(ellipse 88% 82% at 50% 50%,black 45%,transparent 100%);mask-image:radial-gradient(ellipse 88% 82% at 50% 50%,black 45%,transparent 100%)}
+.hero-label{color:rgba(167,139,250,0.9);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem;font-weight:700}
+.hero h1{font-family:'Nunito',sans-serif;font-size:clamp(2.4rem,5.5vw,4.2rem);color:#fff;line-height:1.05;margin-bottom:1.4rem;font-weight:900;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:rgba(167,139,250,0.85)}
+.hero p{color:rgba(255,255,255,0.5);font-size:1rem;max-width:460px;line-height:1.75;font-weight:400}
+
+/* SEARCH */
+.search-bar{background:rgba(244,241,250,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:.85rem 2.5rem;display:flex;gap:.75rem;align-items:center;position:sticky;top:64px;z-index:90}
+.search-input{flex:1;border:none;background:rgba(255,255,255,0.8);padding:.65rem 1rem;font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:400;border-radius:var(--radius-md);outline:none;color:var(--fg);box-shadow:var(--shadow-pressed);transition:all .2s}
+.search-input:focus{background:#fff;box-shadow:var(--shadow-pressed),0 0 0 3px rgba(124,58,237,0.15)}
+.filter-select{border:none;background:rgba(255,255,255,0.8);padding:.65rem 1rem;font-family:'DM Sans',sans-serif;font-size:.875rem;border-radius:var(--radius-md);outline:none;color:var(--fg);cursor:pointer;box-shadow:var(--shadow-pressed)}
+
+/* GRID */
+.main{max-width:1280px;margin:0 auto;padding:3.5rem 2.5rem;position:relative;z-index:1}
+.section-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2rem;padding-bottom:.85rem;border-bottom:2px solid rgba(124,58,237,0.15)}
+.section-title{font-family:'Nunito',sans-serif;font-size:1.5rem;font-weight:900;letter-spacing:-.02em;color:var(--fg)}
+.section-count{font-size:.78rem;color:var(--muted);letter-spacing:.06em;font-weight:500}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+
+/* CARD */
+.card{background:rgba(255,255,255,0.65);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.8);border-radius:var(--radius-xl);overflow:hidden;cursor:pointer;box-shadow:var(--shadow-card);transition:transform .35s,box-shadow .35s;animation:fadeUp .4s ease both;text-decoration:none;color:inherit;display:block}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-card-hover)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.card-thumb{width:100%;height:200px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;overflow:hidden;border-radius:var(--radius-lg) var(--radius-lg) 0 0}
+.card-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(0,0,0,.18))}
+.card-body{padding:1.5rem}
+.card-city{font-size:.68rem;text-transform:uppercase;letter-spacing:.16em;color:var(--muted);margin-bottom:.35rem;font-weight:700}
+.card-name{font-family:'Nunito',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:.5rem;line-height:1.2;letter-spacing:-.01em;color:var(--fg)}
+.card-desc{font-size:.84rem;color:var(--muted);line-height:1.65;margin-bottom:1.1rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card-stats{display:flex;gap:1.25rem;align-items:center;border-top:1px solid rgba(124,58,237,0.1);padding-top:1rem}
+.rating-big{display:flex;align-items:baseline;gap:.2rem}
+.rating-num{font-family:'Nunito',sans-serif;font-size:1.9rem;font-weight:900;color:var(--accent);line-height:1;letter-spacing:-.02em}
+.rating-max{font-size:.75rem;color:var(--muted)}
+.stars{display:flex;gap:1px}
+.star{font-size:.85rem}
+.star.filled{color:var(--warning)}
+.star.empty{color:rgba(124,58,237,0.15)}
+.review-count{font-size:.74rem;color:var(--muted);margin-top:2px}
+.tags-row{display:flex;gap:.35rem;flex-wrap:wrap;margin-left:auto}
+.tag{background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.15);font-size:.68rem;padding:.2rem .55rem;border-radius:999px;color:var(--accent);letter-spacing:.02em;font-weight:600}
+
+/* ── HERO FLOATING ELEMENTS ── */
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(167,139,250,0.2);
+  border:1px solid rgba(167,139,250,0.35);
+  backdrop-filter:blur(8px);
+  color:rgba(255,255,255,.85);
+  font-size:.78rem;font-weight:700;
+  padding:.4rem 1rem;border-radius:999px;
+  margin-bottom:1.25rem;
+  letter-spacing:.04em;
+}
+.hero-float{
+  position:absolute;
+  pointer-events:none;z-index:1;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:50%;
+  width:64px;height:64px;
+  display:flex;align-items:center;justify-content:center;font-size:1.7rem;
+  box-shadow:8px 8px 16px rgba(139,92,246,0.25),-4px -4px 12px rgba(255,255,255,0.15),inset 2px 2px 6px rgba(255,255,255,0.2);
+}
+.hero-float-1{top:12%;right:8%;animation:clayFloat 8s ease-in-out infinite}
+.hero-float-2{top:55%;right:4%;width:52px;height:52px;font-size:1.4rem;animation:clayFloat 10s ease-in-out infinite 1s}
+.hero-float-3{top:20%;right:22%;width:56px;height:56px;font-size:1.5rem;animation:clayFloatAlt 9s ease-in-out infinite 2s}
+.hero-float-4{bottom:15%;right:14%;width:58px;height:58px;font-size:1.5rem;animation:clayFloat 11s ease-in-out infinite 3s}
+.hero-float-5{top:65%;right:28%;width:54px;height:54px;font-size:1.6rem;animation:clayFloatAlt 7s ease-in-out infinite .5s}
+@media(max-width:768px){.hero-float{display:none}}
+
+/* ── HERO SEARCH ── */
+.hero-search{display:flex;gap:.6rem;margin-top:2rem;flex-wrap:wrap}
+.hero-search-input{
+  flex:1;min-width:200px;border:none;
+  background:rgba(255,255,255,0.95);
+  padding:.75rem 1.1rem;
+  font-family:'DM Sans',sans-serif;font-size:.9rem;
+  border-radius:var(--radius-md);outline:none;color:var(--fg);
+  box-shadow:var(--shadow-pressed);transition:all .2s;
+}
+.hero-search-input:focus{background:#fff;box-shadow:var(--shadow-pressed),0 0 0 3px rgba(124,58,237,0.2)}
+.hero-search-select{
+  border:none;background:rgba(255,255,255,0.9);
+  padding:.75rem 1rem;
+  font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:500;
+  border-radius:var(--radius-md);outline:none;color:var(--fg);
+  cursor:pointer;box-shadow:var(--shadow-pressed);
+}
+
+/* DETAIL HERO */
+.detail-hero{height:420px;position:relative;display:flex;align-items:flex-end;overflow:hidden}
+.detail-hero-emoji{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:9rem;pointer-events:none}
+.detail-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(15,5,30,.95) 0%,rgba(15,5,30,.3) 60%,transparent 100%)}
+.detail-hero-content{position:relative;z-index:2;padding:2.5rem;width:100%;max-width:1100px;margin:0 auto}
+.d-city{color:rgba(167,139,250,0.85);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem;font-weight:700}
+.d-name{font-family:'Nunito',sans-serif;font-size:clamp(2rem,5vw,3.5rem);color:#fff;line-height:1.0;margin-bottom:.9rem;font-weight:900;letter-spacing:-.02em}
+.d-rating-row{display:flex;align-items:center;gap:1rem}
+.d-rating-num{font-family:'Nunito',sans-serif;font-size:2rem;font-weight:900;color:#fff;line-height:1}
+.d-review-count{font-size:.78rem;color:rgba(255,255,255,.45);margin-top:2px}
+
+/* DETAIL BODY */
+.detail-body{max-width:1100px;margin:0 auto;padding:3rem 2.5rem;display:grid;grid-template-columns:1fr 300px;gap:3rem;align-items:start;position:relative;z-index:1}
+
+/* BLOCK TITLE */
+.block-title{font-family:'Nunito',sans-serif;font-size:1.15rem;font-weight:900;margin-bottom:1rem;padding-bottom:.6rem;border-bottom:2px solid rgba(124,58,237,0.15);letter-spacing:-.01em;color:var(--fg)}
+
+/* GALLERY */
+.gal-upload{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.5);border:2px dashed rgba(124,58,237,0.25);border-radius:var(--radius-sm);cursor:pointer;transition:all .2s;position:relative;overflow:hidden}
+.gal-upload:hover{border-color:var(--accent);background:rgba(124,58,237,0.05)}
+.gal-upload input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.gal-upload-inner{display:flex;flex-direction:column;align-items:center;gap:.3rem;pointer-events:none}
+.gal-upload-icon{font-size:1.4rem}
+.gal-upload-label{font-size:.7rem;color:var(--muted);text-align:center;letter-spacing:.04em;font-weight:600}
+.gal-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.gal-item:hover .gal-img{transform:scale(1.05)}
+.upload-progress{font-size:.74rem;color:var(--muted);margin-top:.5rem;font-style:italic}
+.card-thumb-img{width:100%;height:100%;object-fit:cover;display:block}
+.detail-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lb-img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:var(--radius-xl)}
+.gallery-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:150px 150px;gap:6px;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:.75rem;box-shadow:var(--shadow-card)}
+.gallery-grid:has(.gal-item:only-child){grid-template-columns:1fr;grid-template-rows:200px}
+.gal-item{overflow:hidden;position:relative;cursor:zoom-in}
+.gal-item:first-child{grid-row:1/3}
+.gal-face{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:2.5rem;transition:transform .35s}
+.gal-item:hover .gal-face{transform:scale(1.06)}
+.gal-shade{position:absolute;inset:0;background:rgba(0,0,0,.08);transition:background .3s}
+.gal-item:hover .gal-shade{background:transparent}
+
+/* MAP */
+.map-wrap{border-radius:var(--radius-lg);overflow:hidden;border:none;margin-bottom:2.5rem;box-shadow:var(--shadow-card)}
+.map-wrap iframe{display:block;width:100%;height:300px;border:none}
+
+/* PRICES */
+.price-table{width:100%;border-collapse:separate;border-spacing:0;font-size:.875rem;margin-bottom:.75rem;background:rgba(255,255,255,0.7);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card)}
+.price-table th{text-align:left;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);padding:.7rem 1.1rem;background:rgba(124,58,237,0.06);font-weight:700}
+.price-table td{padding:.8rem 1.1rem;border-top:1px solid rgba(124,58,237,0.08)}
+.price-em{font-weight:700;color:var(--accent)}
+.price-note{font-size:.72rem;color:var(--muted)}
+
+/* SERVICES */
+.services-list{display:flex;flex-direction:column;gap:.5rem;margin-bottom:2.5rem}
+.svc{display:flex;align-items:center;gap:.75rem;padding:.8rem 1.1rem;background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.8);border-radius:var(--radius-md);font-size:.875rem;box-shadow:var(--shadow-card);transition:transform .2s}
+.svc:hover{transform:translateY(-2px)}
+.svc-icon{font-size:1rem;width:24px;text-align:center;flex-shrink:0}
+.svc-name{font-weight:600;font-size:.875rem}
+.svc-detail{font-size:.73rem;color:var(--muted)}
+.svc-dist{font-size:.73rem;color:var(--accent);font-weight:700;white-space:nowrap;margin-left:auto}
+
+/* TRANSPORT */
+.transport-section{margin-bottom:2.5rem}
+.transport-types{display:flex;flex-direction:column;gap:.6rem}
+.transport-type{background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.8);border-radius:var(--radius-md);padding:.9rem 1.1rem;box-shadow:var(--shadow-card)}
+.transport-type-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.65rem}
+.transport-type-icon{font-size:1rem}
+.transport-type-name{font-weight:700;font-size:.85rem}
+.transport-lines{display:flex;flex-wrap:wrap;gap:.35rem}
+.transport-line{display:inline-flex;align-items:center;justify-content:center;min-width:2.4rem;height:2.4rem;padding:0 .6rem;border-radius:var(--radius-sm);font-size:.82rem;font-weight:800;box-shadow:var(--shadow-btn)}
+.transport-line.bussi{background:linear-gradient(135deg,#60a5fa,#1a73e8);color:#fff}
+.transport-line.raitiovaunu{background:linear-gradient(135deg,#34d399,#00a651);color:#fff}
+.transport-line.metro{background:linear-gradient(135deg,#fb923c,#ef7c00);color:#fff}
+.transport-line.juna{background:linear-gradient(135deg,#c084fc,#8c4799);color:#fff}
+.transport-line.lautta{background:linear-gradient(135deg,#38bdf8,#009ac7);color:#fff}
+.transport-line-stop{font-size:.72rem;color:var(--muted);margin-left:.2rem;font-weight:400}
+.transport-edit-row{display:grid;grid-template-columns:auto 1fr auto;gap:.4rem;align-items:center;margin-bottom:.4rem}
+.transport-type-select{width:100%;border:none;background:rgba(255,255,255,0.8);padding:.4rem .6rem;font-family:'DM Sans',sans-serif;font-size:.82rem;border-radius:var(--radius-sm);color:var(--fg);outline:none;box-shadow:var(--shadow-pressed)}
+
+/* SCHOOLS */
+.school-list{display:flex;flex-direction:column;gap:.5rem}
+.school-item{display:flex;align-items:center;gap:.75rem;padding:.8rem 1.1rem;background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.8);border-radius:var(--radius-md);font-size:.875rem;text-decoration:none;color:inherit;box-shadow:var(--shadow-card);transition:transform .2s,box-shadow .2s}
+.school-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-card-hover)}
+.school-icon{font-size:1rem;width:24px;text-align:center;flex-shrink:0}
+.school-name{font-weight:600;font-size:.875rem}
+.school-detail{font-size:.73rem;color:var(--muted)}
+.school-dist{font-size:.73rem;color:var(--accent);font-weight:700;white-space:nowrap;margin-left:auto}
+.school-type{font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;padding:.15rem .45rem;border-radius:999px;margin-left:.4rem;font-weight:700}
+.school-type.alakoulu{background:rgba(16,185,129,0.12);color:#059669}
+.school-type.ylakoulu{background:rgba(16,185,129,0.08);color:#10b981}
+.school-type.lukio{background:rgba(14,165,233,0.12);color:#0284c7}
+.school-type.ammattikoulu{background:rgba(245,158,11,0.12);color:#d97706}
+.school-type.amk{background:rgba(124,58,237,0.12);color:#7c3aed}
+.school-type.yliopisto{background:var(--fg);color:#fff}
+.schools-note{font-size:.7rem;color:var(--muted);margin-top:.6rem;font-style:italic}
+
+/* REVIEWS */
+.review-item{border-bottom:1px solid rgba(124,58,237,0.08);padding:1.2rem 0}
+.review-item:last-child{border-bottom:none}
+.rev-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.5rem}
+.rev-name{font-weight:700;font-size:.875rem}
+.rev-overall{display:flex;align-items:center;gap:.4rem;margin-top:3px}
+.rev-overall-num{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;color:var(--accent)}
+.rev-stars{display:flex;gap:1px}
+.rev-date{font-size:.72rem;color:var(--muted)}
+.rev-cats{display:grid;grid-template-columns:1fr 1fr;gap:.3rem .8rem;margin-bottom:.55rem}
+.rev-cat{display:flex;align-items:center;gap:.4rem;font-size:.74rem}
+.rev-cat-label{color:var(--muted);width:120px;flex-shrink:0;font-weight:500}
+.rev-cat-bar{flex:1;height:5px;background:rgba(124,58,237,0.1);border-radius:999px;overflow:hidden}
+.rev-cat-fill{height:100%;background:linear-gradient(90deg,#A78BFA,#7C3AED);border-radius:999px;transition:width .5s}
+.rev-cat-val{font-weight:700;color:var(--fg);width:18px;text-align:right;flex-shrink:0}
+.rev-text{font-size:.855rem;color:var(--muted);line-height:1.68}
+.no-reviews{color:var(--muted);font-size:.875rem;padding:.5rem 0;font-style:italic}
+
+/* CATEGORY SUMMARY */
+.cat-summary{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.5rem}
+.cat-card{background:rgba(255,255,255,0.65);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.8);border-radius:var(--radius-md);padding:.9rem 1rem;box-shadow:var(--shadow-card);transition:transform .2s}
+.cat-card:hover{transform:translateY(-2px)}
+.cat-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem}
+.cat-card-label{font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700}
+.cat-card-score{font-family:'Nunito',sans-serif;font-size:1.35rem;font-weight:900;color:var(--accent)}
+.cat-card-icon{font-size:1rem}
+.cat-bar-bg{height:5px;background:rgba(124,58,237,0.1);border-radius:999px;overflow:hidden}
+.cat-bar-fg{height:100%;background:linear-gradient(90deg,#A78BFA,#7C3AED);border-radius:999px;transition:width .6s}
+.overall-card{background:linear-gradient(135deg,#5b21b6,#7C3AED);border-radius:var(--radius-md);padding:1.1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;box-shadow:var(--shadow-btn)}
+.overall-label{color:rgba(255,255,255,0.6);font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;font-weight:700}
+.overall-score{font-family:'Nunito',sans-serif;font-size:2.2rem;font-weight:900;color:#fff;line-height:1}
+.overall-stars{display:flex;gap:1px;margin-top:3px}
+.overall-stars .star.filled{color:#fde68a}
+.overall-stars .star.empty{color:rgba(255,255,255,.2)}
+
+/* ADD REVIEW */
+.add-review{background:rgba(255,255,255,0.5);backdrop-filter:blur(16px);border-radius:var(--radius-xl);padding:1.5rem;margin-top:1.5rem;border:1px solid rgba(255,255,255,0.8);box-shadow:var(--shadow-card)}
+.add-review h4{font-family:'Nunito',sans-serif;font-size:1.1rem;font-weight:900;margin-bottom:1rem;letter-spacing:-.01em}
+.form-group{margin-bottom:.9rem}
+.form-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);display:block;margin-bottom:.35rem;font-weight:700}
+.form-input,.form-textarea,.form-select{width:100%;border:none;background:rgba(255,255,255,0.8);padding:.65rem .95rem;font-family:'DM Sans',sans-serif;font-size:.875rem;font-weight:400;border-radius:var(--radius-md);color:var(--fg);outline:none;box-shadow:var(--shadow-pressed);transition:all .2s}
+.form-input:focus,.form-textarea:focus{background:#fff;box-shadow:var(--shadow-pressed),0 0 0 3px rgba(124,58,237,0.15)}
+.form-textarea{resize:vertical;min-height:85px}
+.cat-picker-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem .75rem;margin-bottom:.5rem}
+.cat-picker{background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.9);border-radius:var(--radius-md);padding:.65rem .9rem;box-shadow:var(--shadow-card)}
+.cat-picker-label{font-size:.66rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:.35rem;display:flex;align-items:center;gap:.3rem;font-weight:700}
+.cat-stars{display:flex;gap:3px}
+.cspick{font-size:1.3rem;cursor:pointer;color:rgba(124,58,237,0.2);border:none;background:none;padding:0;transition:all .15s;line-height:1}
+.cspick:hover,.cspick.on{color:var(--warning);transform:scale(1.2)}
+.overall-preview{background:linear-gradient(135deg,#5b21b6,#7C3AED);border-radius:var(--radius-md);padding:.7rem 1rem;margin-top:.5rem;display:flex;align-items:center;justify-content:space-between;font-size:.83rem;color:rgba(255,255,255,.75);box-shadow:var(--shadow-btn)}
+.overall-preview-num{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;color:#fde68a}
+.submit-btn{background:linear-gradient(135deg,#A78BFA,#7C3AED);color:#fff;border:none;padding:.75rem 1.8rem;font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:700;border-radius:var(--radius-md);cursor:pointer;letter-spacing:.01em;box-shadow:var(--shadow-btn);transition:all .2s;margin-top:.25rem}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-btn-hover)}
+.submit-btn:active{transform:scale(0.94);box-shadow:var(--shadow-pressed)}
+@media(max-width:600px){.cat-summary{grid-template-columns:1fr}.cat-picker-row{grid-template-columns:1fr}.rev-cats{grid-template-columns:1fr}}
+
+/* ADMIN */
+.admin-btn{background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);color:var(--muted);border:1px solid var(--border);font-size:.78rem;cursor:pointer;padding:.4rem .85rem;border-radius:var(--radius-md);letter-spacing:.02em;transition:all .2s;font-family:'DM Sans',sans-serif;font-weight:600;box-shadow:var(--shadow-card)}
+.admin-btn:hover{color:var(--fg);transform:translateY(-1px)}
+.admin-badge{background:linear-gradient(135deg,#A78BFA,#7C3AED);color:#fff;font-size:.65rem;padding:.15rem .45rem;border-radius:999px;letter-spacing:.04em;font-weight:700}
+.admin-bar{background:linear-gradient(135deg,#5b21b6,#7C3AED);color:#fff;padding:.6rem 2.5rem;font-size:.82rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.admin-bar-label{display:flex;align-items:center;gap:.5rem;font-weight:700;letter-spacing:.02em}
+.admin-bar-actions{display:flex;gap:.5rem}
+.admin-save-btn{background:#fff;color:var(--accent);border:none;padding:.4rem 1rem;border-radius:var(--radius-md);font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s;box-shadow:var(--shadow-btn)}
+.admin-save-btn:hover{transform:translateY(-1px)}
+.admin-logout-btn{background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.3);padding:.4rem 1rem;border-radius:var(--radius-md);font-family:'DM Sans',sans-serif;font-size:.82rem;cursor:pointer;transition:all .2s}
+.admin-logout-btn:hover{color:#fff;border-color:#fff}
+.edit-field{width:100%;border:none;background:rgba(255,255,255,0.8);padding:.55rem .8rem;font-family:'DM Sans',sans-serif;font-size:.875rem;border-radius:var(--radius-md);color:var(--fg);outline:none;box-shadow:var(--shadow-pressed);transition:all .15s}
+.edit-field:focus{background:#fff;box-shadow:var(--shadow-pressed),0 0 0 3px rgba(124,58,237,0.15)}
+.edit-textarea{resize:vertical;min-height:80px}
+.edit-label{font-size:.67rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);display:block;margin-bottom:.3rem;margin-top:.75rem;font-weight:700}
+.edit-section{background:rgba(124,58,237,0.04);border:1px solid rgba(124,58,237,0.12);border-radius:var(--radius-md);padding:1rem 1.1rem;margin-bottom:1rem}
+.edit-section-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);font-weight:700;margin-bottom:.75rem}
+.edit-row{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.price-edit-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;margin-bottom:.4rem;align-items:center}
+.price-edit-row-label{font-size:.75rem;color:var(--muted)}
+.add-svc-btn{background:transparent;border:2px dashed rgba(124,58,237,0.25);color:var(--accent);padding:.4rem .8rem;border-radius:var(--radius-md);font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;margin-top:.4rem;width:100%;transition:all .2s}
+.add-svc-btn:hover{border-color:var(--accent);background:rgba(124,58,237,0.06)}
+.svc-edit-row{display:grid;grid-template-columns:2rem 1fr 1fr 1fr auto;gap:.4rem;align-items:center;margin-bottom:.4rem}
+.del-btn{background:none;border:none;color:rgba(124,58,237,0.2);cursor:pointer;font-size:1rem;padding:0;line-height:1;transition:color .15s}
+.del-btn:hover{color:#ef4444}
+.sidebar-card{background:rgba(255,255,255,0.65);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.85);border-radius:var(--radius-xl);padding:1.35rem;margin-bottom:1rem;box-shadow:var(--shadow-card)}
+.sb-title{font-family:'Nunito',sans-serif;font-size:1rem;font-weight:900;margin-bottom:.85rem;padding-bottom:.5rem;border-bottom:1px solid rgba(124,58,237,0.1);letter-spacing:-.01em}
+.sb-stat{display:flex;justify-content:space-between;align-items:center;padding:.4rem 0;border-bottom:1px solid rgba(124,58,237,0.06);font-size:.855rem}
+.sb-stat:last-child{border-bottom:none}
+.sb-label{color:var(--muted);font-weight:500}
+.sb-val{font-weight:700}
+.sb-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(51,47,58,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:1.5rem;opacity:0;pointer-events:none;transition:opacity .2s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:rgba(244,241,250,0.92);backdrop-filter:blur(24px);border-radius:var(--radius-xl);max-width:540px;width:100%;max-height:90vh;overflow-y:auto;transform:translateY(16px);transition:transform .2s;border:1px solid rgba(255,255,255,0.8);box-shadow:var(--shadow-deep)}
+.modal-overlay.open .modal{transform:translateY(0)}
+.modal-hdr{border-bottom:1px solid rgba(124,58,237,0.1);padding:1.35rem 1.75rem;display:flex;align-items:center;justify-content:space-between}
+.modal-title{font-family:'Nunito',sans-serif;font-size:1.25rem;font-weight:900;color:var(--fg);letter-spacing:-.01em}
+.modal-close{background:rgba(124,58,237,0.08);border:none;color:var(--muted);width:32px;height:32px;border-radius:999px;font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.modal-close:hover{background:rgba(124,58,237,0.15);color:var(--fg)}
+.modal-body{padding:1.5rem 1.75rem 1.75rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);backdrop-filter:blur(16px);z-index:500;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .2s;cursor:zoom-out}
+.lightbox.open{opacity:1;pointer-events:all}
+.lb-inner{width:70vmin;height:70vmin;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-xl);overflow:hidden;font-size:10rem}
+
+/* TOAST */
+.toast{position:fixed;bottom:2rem;right:2rem;background:linear-gradient(135deg,#5b21b6,#7C3AED);color:#fff;padding:.85rem 1.35rem;border-radius:var(--radius-md);font-size:.855rem;font-weight:600;box-shadow:var(--shadow-btn);transform:translateY(80px);opacity:0;transition:all .3s;z-index:9999}
+.toast.show{transform:translateY(0);opacity:1}
+
+/* EMPTY */
+.empty{text-align:center;padding:5rem 2rem;color:var(--muted);grid-column:1/-1}
+.empty-icon{font-size:2.5rem;margin-bottom:1rem;opacity:.5}
+.empty h3{font-family:'Nunito',sans-serif;font-size:1.35rem;font-weight:900;margin-bottom:.5rem;color:var(--fg)}
+
+/* SECTION SPACING */
+.info-block{margin-bottom:2.5rem}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .detail-body{grid-template-columns:1fr}
+  .detail-sidebar-col{order:-1}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto}
+  .gal-item:first-child{grid-row:auto;grid-column:1/-1;height:180px}
+}
+@media(max-width:600px){
+  .hero{padding:4rem 1.5rem 3.5rem}
+  .detail-hero-content{padding:2rem 1.5rem}
+  .main,.detail-body{padding:2rem 1rem}
+  .search-bar{padding:.65rem 1rem;flex-wrap:wrap}
+  .grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  nav{padding:0 1rem}
+  .detail-hero{height:300px}
+}
+
+/* ── MOBILE PERFORMANCE ── */
+/* Poistetaan raskaat efektit mobiililaitteilla */
+@media(max-width:768px){
+
+  /* 1. Pysäytetään blob-animaatiot */
+  .blob{animation:none !important}
+
+  /* 2. Poistetaan backdrop-filter blur kaikilta elementeiltä —
+        tämä on yksittäin raskain CSS-ominaisuus mobiililla */
+  .card,.svc,.school-item,.transport-type,.cat-card,
+  .add-review,.sidebar-card,.search-bar,.nav-back,
+  .admin-btn,.modal,.modal-overlay,.hero-inner{
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+  }
+
+  /* Kompensoidaan blur-poisto opaque taustoilla */
+  .card{background:#fff}
+  .svc,.school-item,.transport-type,.cat-card{background:#fff}
+  .add-review{background:#f4f1fa}
+  .sidebar-card{background:#fff}
+  .search-bar{background:var(--bg)}
+  .nav-back{background:rgba(255,255,255,0.9)}
+  .hero-inner{background:rgba(0,0,0,0.4)}
+  .modal{background:#f4f1fa}
+
+  /* 3. Yksinkertaistetaan varjot — 4-layer → 1-layer */
+  .card,.svc,.school-item,.transport-type,
+  .cat-card,.sidebar-card{
+    box-shadow:0 2px 12px rgba(124,58,237,0.1) !important;
+  }
+  .nav-btn,.submit-btn{
+    box-shadow:0 4px 12px rgba(124,58,237,0.25) !important;
+  }
+
+  /* 4. Poistetaan hover-transformit (ei tarvita kosketusnäytöillä) */
+  .card:hover,.svc:hover,.school-item:hover,.cat-card:hover{
+    transform:none !important;
+  }
+
+  /* 5. Yksinkertaistetaan animaatiot */
+  .card{animation:none}
+
+  /* 6. Nav blur → solid */
+  nav{
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+    background:var(--bg);
+  }
+
+  /* 7. Lightbox blur pois */
+  .lightbox{
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+    background:rgba(0,0,0,0.95);
+  }
+}
+
+/* Kunnioitetaan käyttäjän reduced-motion asetusta */
+@media(prefers-reduced-motion:reduce){
+  *{animation:none !important;transition:none !important}
+  .blob{display:none}
+}
+</style>
+</head>
+<body>
+<div class="blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<nav>
+  <button class="nav-logo" onclick="navigate('/')">Kotikonnut<span>.</span></button>
+  <div class="nav-actions" id="navActions"></div>
+</nav>
+<div id="adminBar" style="display:none">
+  <div class="admin-bar">
+    <div class="admin-bar-label">✏️ Ylläpitäjätila päällä</div>
+    <div class="admin-bar-actions">
+      <button class="admin-save-btn" onclick="saveAdminEdits()" id="adminSaveBtn" style="display:none">💾 Tallenna muutokset</button>
+      <button class="admin-logout-btn" onclick="adminLogout()">Kirjaudu ulos</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── HOME ── -->
+<div id="viewHome">
+  <div class="hero" id="homeHero">
+    <img id="heroImg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none" alt="Hero">
+    <div class="hero-inner" style="position:relative;z-index:1">
+      <h1>Löydä <em>unelmiesi</em><br>naapurusto</h1>
+      <p>Tutustu eri asuinalueisiin asukkaiden arvostelujen kautta. Jaa kokemuksesi ja auta muita löytämään oman kotinsa.</p>
+    </div>
+    <div id="heroUploadBtn" style="display:none;position:absolute;bottom:1.5rem;right:1.5rem;z-index:2">
+      <label style="background:rgba(255,255,255,.15);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.25);color:#fff;padding:.5rem 1.1rem;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.4rem;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,.28)'" onmouseout="this.style.background='rgba(255,255,255,.15)'">
+        📷 Vaihda hero-kuva
+        <input type="file" accept="image/*" style="display:none" onchange="uploadHeroImage(event)">
+      </label>
+    </div>
+  </div>
+  <div class="search-bar">
+    <input class="search-input" id="searchInput" type="text" placeholder="Hae naapurustoa tai tagia..." oninput="renderGrid()">
+    <select class="filter-select" id="citySelect" onchange="renderGrid()">
+      <option value="">Kaikki kaupungit</option>
+    </select>
+    <select class="filter-select" id="sortSelect" onchange="renderGrid()">
+      <option value="rating">Parhaat arvostelut</option>
+      <option value="reviews">Eniten arvosteluja</option>
+      <option value="name">A–Ö</option>
+    </select>
+  </div>
+  <div class="main">
+    <div class="section-header">
+      <div class="section-title">Kotikonnut</div>
+      <div class="section-count" id="countLabel"></div>
+    </div>
+    <div class="grid" id="grid"><div class="empty" style="grid-column:1/-1"><div class="empty-icon">⏳</div><h3>Ladataan...</h3></div></div>
+  </div>
+</div>
+
+<!-- ── DETAIL ── -->
+<div id="viewDetail" style="display:none">
+  <div class="detail-hero" id="dHero">
+    <div class="detail-hero-emoji" id="dEmoji"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <div class="d-city" id="dCity"></div>
+      <div class="d-name" id="dName"></div>
+      <div class="d-rating-row">
+        <div class="d-rating-num" id="dRatingNum"></div>
+        <div>
+          <div class="stars" id="dStars"></div>
+          <div class="d-review-count" id="dReviewCount"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-body">
+    <!-- MAIN COL -->
+    <div class="detail-main-col">
+
+      <div class="info-block">
+        <div class="block-title">Arvostelut</div>
+        <div id="dCatSummary"></div>
+        <div id="dReviews"></div>
+        <div class="add-review">
+          <h4>Kirjoita arvostelu</h4>
+          <div class="form-group">
+            <label class="form-label">Nimesi</label>
+            <input class="form-input" id="rName" placeholder="Etunimi tai nimimerkki">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Arvioi kategorioittain</label>
+            <div class="cat-picker-row">
+              <div class="cat-picker">
+                <div class="cat-picker-label"><span>🛒</span> Palvelut</div>
+                <div class="cat-stars" id="cp-palvelut">
+                  <button class="cspick" onclick="setCat('palvelut',1)">★</button>
+                  <button class="cspick" onclick="setCat('palvelut',2)">★</button>
+                  <button class="cspick" onclick="setCat('palvelut',3)">★</button>
+                  <button class="cspick" onclick="setCat('palvelut',4)">★</button>
+                  <button class="cspick" onclick="setCat('palvelut',5)">★</button>
+                </div>
+              </div>
+              <div class="cat-picker">
+                <div class="cat-picker-label"><span>🌿</span> Luonto</div>
+                <div class="cat-stars" id="cp-luonto">
+                  <button class="cspick" onclick="setCat('luonto',1)">★</button>
+                  <button class="cspick" onclick="setCat('luonto',2)">★</button>
+                  <button class="cspick" onclick="setCat('luonto',3)">★</button>
+                  <button class="cspick" onclick="setCat('luonto',4)">★</button>
+                  <button class="cspick" onclick="setCat('luonto',5)">★</button>
+                </div>
+              </div>
+              <div class="cat-picker">
+                <div class="cat-picker-label"><span>🚌</span> Liikenneyhteydet</div>
+                <div class="cat-stars" id="cp-liikenne">
+                  <button class="cspick" onclick="setCat('liikenne',1)">★</button>
+                  <button class="cspick" onclick="setCat('liikenne',2)">★</button>
+                  <button class="cspick" onclick="setCat('liikenne',3)">★</button>
+                  <button class="cspick" onclick="setCat('liikenne',4)">★</button>
+                  <button class="cspick" onclick="setCat('liikenne',5)">★</button>
+                </div>
+              </div>
+              <div class="cat-picker">
+                <div class="cat-picker-label"><span>🛡️</span> Turvallisuus</div>
+                <div class="cat-stars" id="cp-turvallisuus">
+                  <button class="cspick" onclick="setCat('turvallisuus',1)">★</button>
+                  <button class="cspick" onclick="setCat('turvallisuus',2)">★</button>
+                  <button class="cspick" onclick="setCat('turvallisuus',3)">★</button>
+                  <button class="cspick" onclick="setCat('turvallisuus',4)">★</button>
+                  <button class="cspick" onclick="setCat('turvallisuus',5)">★</button>
+                </div>
+              </div>
+              <div class="cat-picker">
+                <div class="cat-picker-label"><span>👶</span> Lapsiystävällisyys</div>
+                <div class="cat-stars" id="cp-lapsiystävällisyys">
+                  <button class="cspick" onclick="setCat('lapsiystävällisyys',1)">★</button>
+                  <button class="cspick" onclick="setCat('lapsiystävällisyys',2)">★</button>
+                  <button class="cspick" onclick="setCat('lapsiystävällisyys',3)">★</button>
+                  <button class="cspick" onclick="setCat('lapsiystävällisyys',4)">★</button>
+                  <button class="cspick" onclick="setCat('lapsiystävällisyys',5)">★</button>
+                </div>
+              </div>
+            </div>
+            <div class="overall-preview">
+              <span style="opacity:.7">Kokonaisarvosana</span>
+              <div id="overallPreview" class="overall-preview-num">—</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Kommentti</label>
+            <textarea class="form-textarea" id="rText" placeholder="Kerro kokemuksistasi..."></textarea>
+          </div>
+          <button class="submit-btn" onclick="submitReview()">Lähetä arvostelu</button>
+        </div>
+      </div>
+
+      <div class="info-block">
+        <div class="block-title">Kuvagalleria</div>
+        <div class="gallery-grid" id="dGallery"></div>
+        <p class="upload-progress" id="uploadProgress"></p>
+      </div>
+
+      <div class="info-block">
+        <div class="block-title">Sijainti kartalla</div>
+        <div class="map-wrap"><iframe id="dMap" loading="lazy"></iframe></div>
+      </div>
+
+      <div class="info-block">
+        <div class="block-title">Asumisen hintatietoja</div>
+        <table class="price-table">
+          <thead><tr><th>Asuntotyyppi</th><th>Hinta €/m²</th><th>Vuokra €/kk</th></tr></thead>
+          <tbody id="dPrices"></tbody>
+        </table>
+        <p class="price-note">* Suuntaa-antavat arviot. Tarkista ajantasaiset tiedot kiinteistönvälittäjältä.</p>
+      </div>
+
+      <div class="info-block">
+        <div class="block-title">Julkinen liikenne</div>
+        <div id="dTransport"></div>
+      </div>
+
+      <div class="info-block">
+        <div class="block-title">Lähipalvelut</div>
+        <div class="services-list" id="dServicesList"></div>
+      </div>
+
+      <div class="info-block">
+        <div class="block-title">Lähikoulut <span id="schoolsSource" style="font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:400;color:var(--muted);letter-spacing:.05em"></span></div>
+        <div id="dSchools"><div style="font-size:.87rem;color:var(--muted);font-style:italic">Haetaan kouluja...</div></div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="detail-sidebar-col">
+      <div class="sidebar-card">
+        <div class="sb-title">Perustiedot</div>
+        <div id="dSidebarStats"></div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sb-title">Tagit</div>
+        <div class="sb-tags" id="dSidebarTags"></div>
+      </div>
+      <div class="sidebar-card">
+        <div class="sb-title">Kuvaus</div>
+        <p style="font-size:.87rem;color:var(--muted);line-height:1.78;white-space:pre-wrap" id="dDesc"></p>
+      </div>
+      <!-- ADMIN EDIT PANEL -->
+      <div class="sidebar-card" id="adminEditPanel" style="display:none">
+        <div class="sb-title">✏️ Muokkaa naapurustoa</div>
+        <label class="edit-label">Nimi</label>
+        <input class="edit-field" id="eName">
+        <label class="edit-label">Kaupunki</label>
+        <input class="edit-field" id="eCity">
+        <label class="edit-label">Kuvaus</label>
+        <textarea class="edit-field edit-textarea" id="eDesc"></textarea>
+        <div class="edit-row" style="margin-top:.75rem">
+          <div>
+            <label class="edit-label" style="margin-top:0">Tyyppi</label>
+            <select class="edit-field" id="eType">
+              <option>Kaupunkilähiö</option><option>Rauhalinen asuinalue</option>
+              <option>Historiallinen alue</option><option>Moderni alue</option><option>Luonnonläheinen</option>
+            </select>
+          </div>
+          <div>
+            <label class="edit-label" style="margin-top:0">Emoji</label>
+            <input class="edit-field" id="eEmoji" maxlength="2">
+          </div>
+        </div>
+        <div class="edit-row">
+          <div>
+            <label class="edit-label">Julkinen liikenne</label>
+            <select class="edit-field" id="eTransport">
+              <option>Erinomainen</option><option>Hyvä</option><option>Kohtalainen</option><option>Heikko</option>
+            </select>
+          </div>
+          <div>
+            <label class="edit-label">Palvelut</label>
+            <select class="edit-field" id="eServices">
+              <option>Monipuoliset</option><option>Hyvät</option><option>Kohtalaiset</option><option>Rajalliset</option>
+            </select>
+          </div>
+        </div>
+        <label class="edit-label">Tagit (pilkulla erotettuna)</label>
+        <input class="edit-field" id="eTags">
+        <div class="edit-row">
+          <div><label class="edit-label">Lat</label><input class="edit-field" id="eLat" type="number" step="0.0001"></div>
+          <div><label class="edit-label">Lng</label><input class="edit-field" id="eLng" type="number" step="0.0001"></div>
+        </div>
+
+        <div class="edit-section" style="margin-top:1rem">
+          <div class="edit-section-title">Hintatiedot</div>
+          <div id="ePrices"></div>
+        </div>
+
+        <div class="edit-section">
+          <div class="edit-section-title">Julkinen liikenne</div>
+          <div id="eTransportLines"></div>
+          <button class="add-svc-btn" onclick="addTransportRow()">+ Lisää linja</button>
+        </div>
+
+        <div class="edit-section">
+          <div class="edit-section-title">Lähipalvelut</div>
+          <div id="eSvcs"></div>
+          <button class="add-svc-btn" onclick="addSvcRow()">+ Lisää palvelu</button>
+        </div>
+
+        <button class="submit-btn" onclick="saveAdminEdits()" style="width:100%;margin-top:.5rem">💾 Tallenna muutokset</button>
+        <button onclick="deleteNeighborhood()" style="width:100%;margin-top:.5rem;background:none;border:1px solid #ddd;color:#aaa;padding:.6rem;border-radius:2px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.82rem;transition:all .2s" onmouseover="this.style.borderColor='#C4593A';this.style.color='#C4593A'" onmouseout="this.style.borderColor='#ddd';this.style.color='#aaa'">🗑 Poista naapurusto</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN MODAL -->
+<div class="modal-overlay" id="adminLoginOverlay" onclick="closeAdminLogin(event)">
+  <div class="modal" style="max-width:380px">
+    <div class="modal-hdr">
+      <div class="modal-title">Ylläpitäjän kirjautuminen</div>
+      <button class="modal-close" onclick="closeAdminLogin()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-group">
+        <label class="form-label">Salasana</label>
+        <input class="form-input" id="adminPwInput" type="password" placeholder="Kirjoita salasana..." onkeydown="if(event.key==='Enter')checkAdminPw()">
+      </div>
+      <button class="submit-btn" onclick="checkAdminPw()" style="width:100%">Kirjaudu sisään</button>
+    </div>
+  </div>
+</div>
+
+<!-- ADD MODAL -->
+<div class="modal-overlay" id="addOverlay" onclick="closeAddModal(event)">
+  <div class="modal">
+    <div class="modal-hdr">
+      <div class="modal-title">Lisää naapurusto</div>
+      <button class="modal-close" onclick="closeAddModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="form-row" style="margin-bottom:.9rem">
+        <div><label class="form-label">Nimi *</label><input class="form-input" id="nName" placeholder="esim. Kallio"></div>
+        <div><label class="form-label">Kaupunki *</label><input class="form-input" id="nCity" placeholder="esim. Helsinki"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Kuvaus *</label><textarea class="form-textarea" id="nDesc" placeholder="Lyhyt kuvaus..."></textarea></div>
+      <div class="form-row" style="margin-bottom:.9rem">
+        <div><label class="form-label">Tyyppi</label>
+          <select class="form-select" id="nType"><option>Kaupunkilähiö</option><option>Rauhalinen asuinalue</option><option>Historiallinen alue</option><option>Moderni alue</option><option>Luonnonläheinen</option></select>
+        </div>
+        <div><label class="form-label">Emoji</label><input class="form-input" id="nEmoji" placeholder="esim. 🏙️" maxlength="2"></div>
+      </div>
+      <div class="form-row" style="margin-bottom:.9rem">
+        <div><label class="form-label">Julkinen liikenne</label>
+          <select class="form-select" id="nTransport"><option>Erinomainen</option><option>Hyvä</option><option>Kohtalainen</option><option>Heikko</option></select>
+        </div>
+        <div><label class="form-label">Palvelut</label>
+          <select class="form-select" id="nServices"><option>Monipuoliset</option><option>Hyvät</option><option>Kohtalaiset</option><option>Rajalliset</option></select>
+        </div>
+      </div>
+      <div class="form-group"><label class="form-label">Tagit (pilkulla erotettuna)</label><input class="form-input" id="nTags" placeholder="esim. kahvilat, puistot"></div>
+      <div class="form-row" style="margin-bottom:.9rem">
+        <div><label class="form-label">Leveysaste (lat)</label><input class="form-input" id="nLat" placeholder="esim. 60.1867"></div>
+        <div><label class="form-label">Pituusaste (lng)</label><input class="form-input" id="nLng" placeholder="esim. 24.9512"></div>
+      </div>
+      <button class="submit-btn" onclick="submitNeighborhood()" style="margin-top:.5rem">Lisää naapurusto</button>
+    </div>
+  </div>
+</div>
+
+<!-- CONFIRM MODAL -->
+<div class="modal-overlay" id="confirmOverlay">
+  <div class="modal" style="max-width:400px">
+    <div class="modal-hdr">
+      <div class="modal-title" id="confirmTitle">Vahvista toiminto</div>
+    </div>
+    <div class="modal-body">
+      <p id="confirmMsg" style="font-size:.9rem;color:var(--muted);line-height:1.65;margin-bottom:1.5rem"></p>
+      <div style="display:flex;gap:.75rem">
+        <button class="submit-btn" id="confirmOkBtn" style="flex:1">Vahvista</button>
+        <button onclick="closeConfirm()" style="flex:1;background:rgba(124,58,237,0.08);color:var(--fg);border:none;padding:.75rem;border-radius:var(--radius-md);font-family:'DM Sans',sans-serif;font-size:.9rem;font-weight:600;cursor:pointer">Peruuta</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <div class="lb-inner" id="lbInner"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/**
+ * ============================================================
+ * KOTIKONNUT — Naapurustojen arvostelupalvelu
+ * ============================================================
+ *
+ * ARKKITEHTUURI (Vaihtoehto A — yhtenäinen HTML-tiedosto)
+ * --------------------------------------------------------
+ * Tämä on tahallisesti yksinkertainen yhden tiedoston sovellus.
+ * Kun sivusto kasvaa, seuraava askel on siirtyminen
+ * Vite + React -rakenteeseen (Vaihtoehto B).
+ *
+ * OSIOT (järjestyksessä):
+ *   1. SECURITY    — escapeHtml XSS-suojaus
+ *   2. CONFIG      — Supabase-yhteys, API-avain
+ *   3. CONSTANTS   — CATS, TRANSPORT_TYPES, GRADIENTS, DEFAULT
+ *   4. STATE       — Sovelluksen muuttujat
+ *   5. SUPABASE    — sbGet, sbPost, rowToHood, loadData
+ *   6. ROUTING     — navigate, router, hashchange
+ *   7. HELPERS     — avg, starsHtml, grad, fmtDate, toast
+ *   8. HOME        — updateNav, showHome, populateCityFilter, renderGrid
+ *   9. DETAIL      — showDetail, updateDetailRating, renderCatSummary, renderReviews
+ *  10. REVIEWS     — setCat, resetCatPickers, submitReview
+ *  11. NEIGHBORHOODS — openAddModal, submitNeighborhood
+ *  12. SCHOOLS     — fetchSchools
+ *  13. SEO         — updateSEO, resetSEO, setMeta
+ *  14. HERO IMAGE  — loadHeroImage, uploadHeroImage
+ *  15. TRANSPORT   — fetchAndRenderTransport, renderManualTransportLines
+ *  16. ADMIN       — checkAdminPw, populateAdminPanel, saveAdminEdits, deleteNeighborhood
+ *  17. IMAGES      — uploadImage, openLightbox
+ *  18. INIT        — loadData käynnistys
+ *
+ * TUNNETUT RAJOITUKSET:
+ *  - API-avain on julkinen (anon key) — Row Level Security suojaa
+ *  - Admin-autentikaatio on yksinkertainen (plainteksti Supabasessa)
+ *  - Ei bundle-optimointia tai koodinjakoa
+ * ============================================================
+ */
+
+// ════════════════════════════════════════════════
+// 1. SECURITY
+// ════════════════════════════════════════════════
+
+/**
+ * Sanitoi merkkijonon HTML-injektiota vastaan (XSS-suojaus).
+ * Käytä aina kun renderöit käyttäjäsyötettä innerHTML:ään.
+ */
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
+// ════════════════════════════════════════════════
+// 3. CONSTANTS
+// ════════════════════════════════════════════════
+
+// Korttien fallback-taustavärit kun kuvaa ei ole.
+// grad()-funktio valitsee deterministisesti id:n perusteella.
+const GRADIENTS = [
+  'linear-gradient(135deg,#6B8C6E,#3d5e40)',
+  'linear-gradient(135deg,#C4593A,#8B3A2B)',
+  'linear-gradient(135deg,#5C7A8C,#3D5A6B)',
+  'linear-gradient(135deg,#8C7E6E,#5e4f42)',
+  'linear-gradient(135deg,#7A6B8C,#4f3d6b)',
+  'linear-gradient(135deg,#8C6B6B,#6B4040)',
+];
+
+// Arviointikategoriat — lisää tänne jos kategorioita muutetaan.
+// Muista päivittää myös HTML:n cat-picker-rivit ja resetCatPickers().
+const CATS = [
+  {key:'palvelut',           label:'Palvelut',           icon:'🛒'},
+  {key:'luonto',             label:'Luonto',             icon:'🌿'},
+  {key:'liikenne',           label:'Liikenneyhteydet',   icon:'🚌'},
+  {key:'turvallisuus',       label:'Turvallisuus',       icon:'🛡️'},
+  {key:'lapsiystävällisyys', label:'Lapsiystävällisyys', icon:'👶'},
+];
+
+// ════════════════════════════════════════════════
+// 4. STATE — Sovelluksen muuttujat
+// ════════════════════════════════════════════════
+let hoods = [];               // Kaikki naapurustot muistissa
+let currentId = null;          // Auki oleva naapurusto
+let isAdmin = false;           // Ylläpitäjätila
+let isSubmittingReview = false; // Estää duplikaattilähetykset
+const transportCache = {};     // Overpass API -vastaukset (session-muisti)
+
+// Arvosteluformin tähtivalinnat — nollataan resetCatPickers():lla
+let selCats = {
+  palvelut: 0,
+  luonto: 0,
+  liikenne: 0,
+  turvallisuus: 0,
+  'lapsiystävällisyys': 0,
+};
+
+/**
+ * Oletusdata — käytetään kahdessa tilanteessa:
+ *  1. Ensimmäinen käynnistys: siemennetään Supabase-tietokanta tällä.
+ *  2. Fallback: jos Supabase-yhteys epäonnistuu, näytetään tämä.
+ *
+ * TODO: Kun sivustolla on riittävästi oikeaa dataa, tämä
+ * voidaan korvata tyhjällä taulukolla [] ja poistaa seed-logiikka.
+ */
+const DEFAULT = [
+  {id:'kallio',name:'Kallio',city:'Helsinki',desc:'Kallio on elävä ja monipuolinen kaupunginosa, joka tunnetaan vilkkaasta baari- ja ravintolakulttuuristaan. Alue houkuttelee taiteilijoita, nuoria ammattilaisia ja luovia ihmisiä. Tiheä rakenne, kumpuilevat kadut ja jugend-arkkitehtuuri tekevät alueesta ainutlaatuisen.',type:'Kaupunkilähiö',transport:'Erinomainen',services:'Monipuoliset',tags:['baarit','kahvilat','kulttuuri','nuorekas'],emoji:'🎸',lat:60.1867,lng:24.9512,gallery:['🎸','☕','🎨','🍺','🌆'],prices:[{type:'Yksiö',sqm:5800,rent:900},{type:'Kaksio',sqm:5200,rent:1300},{type:'Kolmio+',sqm:4800,rent:1700}],svcs:[{i:'🚇',n:'Sörnäinen metro',d:'Metro, linjat M1 & M2',dist:'200 m'},{i:'🛒',n:'K-Supermarket Kallio',d:'Päivittäistavarat',dist:'350 m'},{i:'🏥',n:'Kallion terveysasema',d:'Terveyskeskus',dist:'600 m'},{i:'📚',n:'Kallion kirjasto',d:'Kaupunginkirjasto',dist:'400 m'},{i:'🌳',n:'Tokoinranta',d:'Puisto & rantakävelytie',dist:'500 m'}],reviews:[{name:'Matti K.',rating:5,text:'Paras kaupunginosa! Joka päivä tapahtuu jotain uutta. Kahvilat, baarit ja kulttuuri kävelymatkan päässä.',date:'2024-11-12'},{name:'Liisa M.',rating:4,text:'Ihana alue, mutta viikonloppuisin voi olla meluisaa. Muuten täydellinen.',date:'2024-10-08'}]},
+  {id:'punavuori',name:'Punavuori',city:'Helsinki',desc:'Trendikäs design-kaupunginosa tunnetaan vintage-liikkeistään, gallerioistaan ja laadukkaista kahviloistaan. Historiallinen arkkitehtuuri ja boheemi tunnelma. Design District sijaitsee täällä.',type:'Historiallinen alue',transport:'Erinomainen',services:'Hyvät',tags:['design','vintage','galleria','boheemi'],emoji:'🎨',lat:60.1612,lng:24.9367,gallery:['🎨','🖼️','☕','🛍️','🏛️'],prices:[{type:'Yksiö',sqm:6200,rent:1000},{type:'Kaksio',sqm:5700,rent:1450},{type:'Kolmio+',sqm:5200,rent:1900}],svcs:[{i:'🚃',n:'Hietalahti raitiovaunu',d:'Linjat 6 & 8',dist:'150 m'},{i:'🛍️',n:'Design District',d:'Muotoiluliikkeet',dist:'100 m'},{i:'🛒',n:'Hietalahden kauppahalli',d:'Kauppahalli & torimyynti',dist:'400 m'},{i:'🌊',n:'Hietalahdenranta',d:'Merenranta & uimaranta',dist:'600 m'},{i:'🍽️',n:'Ravintolat & kahvilat',d:'Laadukkaita vaihtoehtoja',dist:'0–300 m'}],reviews:[{name:'Anna V.',rating:5,text:'Täydellinen sijainti, mahtavia vintage-liikkeitä ja ihana tunnelma!',date:'2024-12-01'},{name:'Tommi H.',rating:4,text:'Kallis asua mutta elämänlaatu on korkealla.',date:'2024-11-15'}]},
+  {id:'tammela',name:'Tammela',city:'Tampere',desc:'Tammelan tori ja ympäröivät kadut muodostavat elävän sydämen, jossa vanha ja uusi kohtaavat. Historiaa, kivitalorakennuksia ja kävelyetäisyydellä kaikkea. Yhteisöllisyys on vahvaa.',type:'Historiallinen alue',transport:'Hyvä',services:'Monipuoliset',tags:['tori','historia','yhteisöllisyys','kivitalot'],emoji:'🏛️',lat:61.5000,lng:23.7800,gallery:['🏛️','🌿','🛒','☕','🏘️'],prices:[{type:'Yksiö',sqm:3200,rent:650},{type:'Kaksio',sqm:2900,rent:900},{type:'Kolmio+',sqm:2600,rent:1200}],svcs:[{i:'🚌',n:'Tammelan tori pysäkki',d:'Useita linjoja',dist:'50 m'},{i:'🛒',n:'Tammelan tori',d:'Kauppatori & lähikauppa',dist:'100 m'},{i:'🏥',n:'TAYS',d:'Yliopistollinen sairaala',dist:'1,2 km'},{i:'🌳',n:'Tammerkosken puisto',d:'Viheralue & jokimaisema',dist:'600 m'}],reviews:[{name:'Pekka J.',rating:4,text:'Rento tunnelma, hyvät palvelut. Suosittelen perheille.',date:'2024-09-15'},{name:'Sari L.',rating:5,text:'Rakastin täällä asumista! Loistava yhteisöllisyys.',date:'2024-08-22'}]},
+  {id:'hiekkaharju',name:'Hiekkaharju',city:'Vantaa',desc:'Luonnonläheinen asuinalue, jossa metsät ja hyvät liikenneyhteydet yhdistyvät sujuvasti. Sopii erinomaisesti lapsiperheille. Rautatieasema tarjoaa nopeat yhteydet pääkaupunkiseudulle.',type:'Luonnonläheinen',transport:'Hyvä',services:'Kohtalaiset',tags:['luonto','metsä','lapsiperheet','rauhalinen'],emoji:'🌲',lat:60.3100,lng:25.0400,gallery:['🌲','🏡','🌿','🚂','⛺'],prices:[{type:'Yksiö',sqm:2800,rent:700},{type:'Kaksio',sqm:2500,rent:950},{type:'Kolmio+',sqm:2200,rent:1250}],svcs:[{i:'🚂',n:'Hiekkaharju juna-asema',d:'I-juna, Helsinki 15 min',dist:'300 m'},{i:'🛒',n:'S-Market',d:'Päivittäistavarat',dist:'500 m'},{i:'🌲',n:'Kuusijärven ulkoilualue',d:'Metsä, uiminen, ladut',dist:'2 km'},{i:'🏫',n:'Hiekkaharjun koulu',d:'Peruskoulu',dist:'400 m'}],reviews:[{name:'Heikki R.',rating:4,text:'Rauhallinen ja vihreä alue. Hyvä perheen kanssa, luonto lähellä.',date:'2024-11-30'}]},
+  {id:'kauppuri',name:'Kauppuri',city:'Oulu',desc:'Viihtyisä ja rauhallinen asuinalue Oulun ytimessä. Tunnettu perhepainotteisuudestaan ja hyvistä koulupalveluistaan. Pyöräilykaupunki Oulun infrastruktuuri palvelee erinomaisesti.',type:'Rauhalinen asuinalue',transport:'Hyvä',services:'Hyvät',tags:['perheystävällinen','koulut','pyöräily','rauhalinen'],emoji:'🚲',lat:65.0100,lng:25.4700,gallery:['🚲','🏡','❄️','🌊','🏫'],prices:[{type:'Yksiö',sqm:2100,rent:550},{type:'Kaksio',sqm:1900,rent:750},{type:'Kolmio+',sqm:1700,rent:1000}],svcs:[{i:'🚌',n:'Bussipysäkki',d:'Useita linjoja keskustaan',dist:'100 m'},{i:'🛒',n:'Prisma Oulu',d:'Hypermarket',dist:'800 m'},{i:'🚲',n:'Pyöräilyreitti',d:'Kattavat pyörätiet',dist:'0 m'},{i:'🌊',n:'Nallikari',d:'Ranta & vapaa-aika',dist:'3 km'}],reviews:[]}
+];
+
+// ════════════════════════════════════════════════
+// 2. CONFIG — Supabase-yhteys
+// ════════════════════════════════════════════════
+// HUOM: SB_KEY on Supabasen julkinen anon-avain (ei salainen).
+// Suoja tapahtuu Row Level Security -säännöillä Supabasessa.
+// ════════════════════════════════════════════════
+// 5. SUPABASE — Tietokantayhteys
+// ════════════════════════════════════════════════
+const SB_URL = 'https://updyfjpkabpqhojpmihm.supabase.co';
+const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVwZHlmanBrYWJwcWhvanBtaWhtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQwNzAzNTEsImV4cCI6MjA4OTY0NjM1MX0.byiG71T0TYlHG3w6xPKBo1Wz7s7Z2AwqttWu7NJBea0';
+const SB_HEADERS = {
+  'Content-Type': 'application/json',
+  'apikey': SB_KEY,
+  'Authorization': 'Bearer ' + SB_KEY,
+  'Prefer': 'return=representation'
+};
+
+async function sbGet(table, query='') {
+  const r = await fetch(`${SB_URL}/rest/v1/${table}${query}`, {headers: SB_HEADERS});
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+async function sbPost(table, body) {
+  const r = await fetch(`${SB_URL}/rest/v1/${table}`, {method:'POST', headers: SB_HEADERS, body: JSON.stringify(body)});
+  if (!r.ok) throw new Error(await r.text());
+  return r.json();
+}
+
+// Map Supabase row → local hood object
+function rowToHood(row, reviews=[]) {
+  return {
+    id: row.id, name: row.name, city: row.city,
+    desc: row.description, type: row.type,
+    transport: row.transport, services: row.services,
+    tags: row.tags||[], emoji: row.emoji,
+    lat: row.lat, lng: row.lng,
+    gallery: row.gallery||[row.emoji||'🏘️','🏡','🌿','☕','🌆'],
+    image_urls: row.image_urls||[],
+    transport_lines: row.transport_lines||[],
+    prices: row.prices||[], svcs: row.svcs||[],
+    reviews: reviews.map(rv=>({
+      name: rv.name, rating: rv.rating,
+      cats: rv.cats||{}, text: rv.text,
+      date: rv.date
+    }))
+  };
+}
+
+async function loadData() {
+  try {
+    const [rows, revRows] = await Promise.all([
+      sbGet('neighborhoods', '?select=*&order=created_at.asc'),
+      sbGet('reviews', '?select=*&order=created_at.asc')
+    ]);
+
+    if (rows.length === 0) {
+      // Seed default data on first run
+      for (const d of DEFAULT) {
+        const {reviews: revs, desc, ...rest} = d;
+        try { await sbPost('neighborhoods', {...rest, description: desc}); } catch {}
+        for (const rv of revs) {
+          try { await sbPost('reviews', {neighborhood_id: d.id, ...rv, cats: rv.cats||{}}); } catch {}
+        }
+      }
+      hoods = DEFAULT.map(d => ({...d}));
+    } else {
+      hoods = rows.map(row => rowToHood(row, revRows.filter(r=>r.neighborhood_id===row.id)));
+    }
+  } catch(e) {
+    console.error('Supabase virhe:', e);
+    hoods = DEFAULT.map(d => ({...d}));
+  }
+  router();
+}
+
+
+// ════════════════════════════════════════════════
+// 7. HELPERS — Apufunktiot
+// ════════════════════════════════════════════════
+function catAvgs(n) {
+  const res = {};
+  CATS.forEach(c => {
+    const vals = n.reviews.map(r => r.cats?.[c.key]).filter(v=>v>0);
+    res[c.key] = vals.length ? vals.reduce((s,v)=>s+v,0)/vals.length : null;
+  });
+  return res;
+}
+function overallAvg(catA) {
+  const vals = Object.values(catA).filter(v=>v!==null);
+  return vals.length ? vals.reduce((s,v)=>s+v,0)/vals.length : null;
+}
+function avg(n) {
+  const ca = catAvgs(n);
+  const ov = overallAvg(ca);
+  if (ov) return ov.toFixed(1);
+  const old = n.reviews.filter(r=>r.rating).map(r=>r.rating);
+  return old.length ? (old.reduce((s,v)=>s+v,0)/old.length).toFixed(1) : null;
+}
+function starsHtml(r) {
+  return [1,2,3,4,5].map(i=>`<span class="star ${i<=Math.round(r)?'filled':'empty'}">★</span>`).join('');
+}
+function grad(id) {
+  let h=0; for(const c of id) h=(h*31+c.charCodeAt(0))&0xffffffff;
+  return GRADIENTS[Math.abs(h)%GRADIENTS.length];
+}
+function fmtDate(d) {
+  if(!d) return ''; const [y,m,day]=d.split('-'); return `${day}.${m}.${y}`;
+}
+function toast(msg) {
+  const t=document.getElementById('toast'); t.textContent=msg;
+  t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// ════════════════════════════════════════════════
+// 6. ROUTING — Hash-reititys
+// ════════════════════════════════════════════════
+function navigate(path) {
+  const hash = path === '/' ? '' : path.replace(/^\//,'');
+  history.pushState(null, '', '#' + (hash ? '/'+hash : ''));
+  router();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function router() {
+  const hash = location.hash.replace('#','') || '/';
+  const seg = hash.split('/').filter(Boolean);
+  if (!seg.length) showHome();
+  else showDetail(seg[0]);
+}
+
+window.addEventListener('popstate', () => { router(); window.scrollTo({top:0}); });
+
+// ════════════════════════════════════════════════
+// 8. HOME — Etusivunäkymä
+// ════════════════════════════════════════════════
+function updateNav(showBack) {
+  const adminHtml = `<button class="admin-btn" onclick="openAdminLogin()" id="adminNavBtn">${isAdmin ? '⚙ Ylläpito <span class="admin-badge">ON</span>' : '⚙ Ylläpito'}</button>`;
+  const backHtml = showBack ? `<button class="nav-back" onclick="navigate('/')">← Takaisin</button>` : '';
+  const addHtml = `<button class="nav-btn" onclick="openAddModal()">+ Lisää naapurusto</button>`;
+  document.getElementById('navActions').innerHTML = backHtml + adminHtml + addHtml;
+}
+
+function showHome() {
+  document.getElementById('viewHome').style.display='block';
+  document.getElementById('viewDetail').style.display='none';
+  updateNav(false);
+  resetSEO();
+  populateCityFilter();
+  renderGrid();
+}
+
+function populateCityFilter() {
+  const sel = document.getElementById('citySelect');
+  const current = sel.value;
+  const cities = [...new Set(hoods.map(n => n.city))].sort((a,b) => a.localeCompare(b,'fi'));
+  sel.innerHTML = `<option value="">Kaikki kaupungit</option>` +
+    cities.map(c => `<option value="${c}"${c===current?' selected':''}>${c}</option>`).join('');
+}
+
+function renderGrid() {
+  const q=(document.getElementById('searchInput')?.value||'').toLowerCase();
+  const sort=document.getElementById('sortSelect')?.value||'rating';
+  const city=document.getElementById('citySelect')?.value||'';
+  let list=hoods.filter(n=>
+    (!city || n.city === city) &&
+    (n.name.toLowerCase().includes(q)||(n.tags||[]).some(t=>t.toLowerCase().includes(q)))
+  );
+  list.sort((a,b)=>{
+    if(sort==='rating') return (avg(b)||0)-(avg(a)||0);
+    if(sort==='reviews') return b.reviews.length-a.reviews.length;
+    return a.name.localeCompare(b.name,'fi');
+  });
+  document.getElementById('countLabel').textContent=`${list.length} naapurustoa`;
+  const grid=document.getElementById('grid');
+  if(!list.length){
+    grid.innerHTML=`<div class="empty"><div class="empty-icon">🗺️</div><h3>Ei tuloksia</h3><p>Kokeile eri hakusanaa tai lisää uusi naapurusto.</p></div>`;
+    return;
+  }
+  grid.innerHTML=list.map((n,i)=>{
+    const a=avg(n);
+    const tags=(n.tags||[]).slice(0,3).map(t=>`<span class="tag">${escapeHtml(t)}</span>`).join('');
+    const thumb = (n.image_urls&&n.image_urls.length)
+      ? `<img class="card-thumb-img" src="${escapeHtml(n.image_urls[0])}" alt="${escapeHtml(n.name)}" loading="lazy">`
+      : '';
+    return `<a class="card" href="#/${escapeHtml(n.id)}" style="animation-delay:${i*.05}s">
+      <div class="card-thumb" style="background:${grad(n.id)}">
+        ${thumb}
+      </div>
+      <div class="card-body">
+        <div class="card-city">${escapeHtml(n.city)}</div>
+        <div class="card-name">${escapeHtml(n.name)}</div>
+        <div class="card-desc">${escapeHtml(n.desc)}</div>
+        <div class="card-stats">
+          ${a?`<div class="rating-big"><div class="rating-num">${a}</div><div class="rating-max">/5</div></div>
+          <div><div class="stars">${starsHtml(a)}</div><div class="review-count">${n.reviews.length} arvostelua</div></div>`
+          :`<div style="font-size:.82rem;color:var(--muted)">Ei vielä arvosteluja</div>`}
+          <div class="tags-row">${tags}</div>
+        </div>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════
+// 9. DETAIL — Naapuruston sivunäkymä
+// ════════════════════════════════════════════════
+function showDetail(id) {
+  const n=hoods.find(x=>x.id===id);
+  if(!n){navigate('/');return;}
+  currentId=id;
+  document.getElementById('viewHome').style.display='none';
+  document.getElementById('viewDetail').style.display='block';
+  updateNav(true);
+
+  // Hero
+  document.getElementById('dHero').style.background=grad(n.id);
+  document.getElementById('dEmoji').textContent='';
+  // Show hero image if available
+  let heroImg = document.getElementById('dHeroImg');
+  if (!heroImg) {
+    heroImg = document.createElement('img');
+    heroImg.id = 'dHeroImg';
+    heroImg.className = 'detail-hero-img';
+    document.getElementById('dHero').prepend(heroImg);
+  }
+  if (n.image_urls&&n.image_urls.length) {
+    heroImg.src = n.image_urls[0];
+    heroImg.style.display = 'block';
+  } else {
+    heroImg.style.display = 'none';
+  }
+  document.getElementById('dCity').textContent=n.city;
+  document.getElementById('dName').textContent=n.name;
+  updateDetailRating(n);
+
+  // Gallery
+  const gcolors=[grad(n.id),'linear-gradient(135deg,#8C7E6E,#5e4f42)','linear-gradient(135deg,#6B8C6E,#3d5e40)','linear-gradient(135deg,#5C7A8C,#3D5A6B)','linear-gradient(135deg,#7A6B8C,#4f3d6b)'];
+  const imgs = n.image_urls&&n.image_urls.length ? n.image_urls : [];
+  let galHtml = imgs.slice(0,4).map((url,i)=>
+    `<div class="gal-item" onclick="openLightbox('${url}',true)">
+      <img class="gal-img" src="${url}" alt="Kuva ${i+1}" loading="lazy">
+      <div class="gal-shade"></div>
+    </div>`
+  ).join('');
+  // Upload slot
+  galHtml += `<div class="gal-item gal-upload" title="Lisää kuva">
+    <input type="file" accept="image/*" onchange="uploadImage(event)" title="Lisää kuva">
+    <div class="gal-upload-inner">
+      <div class="gal-upload-icon">📷</div>
+      <div class="gal-upload-label">Lisää kuva</div>
+    </div>
+  </div>`;
+  document.getElementById('dGallery').innerHTML = galHtml;
+  document.getElementById('uploadProgress').textContent='';
+
+  // Map
+  const lat=n.lat||60.1699, lng=n.lng||24.9384;
+  document.getElementById('dMap').src=
+    `https://www.openstreetmap.org/export/embed.html?bbox=${lng-.02}%2C${lat-.012}%2C${lng+.02}%2C${lat+.012}&layer=mapnik&marker=${lat}%2C${lng}`;
+
+  // Prices
+  document.getElementById('dPrices').innerHTML=(n.prices||[]).map(p=>
+    `<tr><td>${p.type}</td><td class="price-em">${p.sqm.toLocaleString('fi-FI')} €/m²</td><td>${p.rent.toLocaleString('fi-FI')} €/kk</td></tr>`
+  ).join('');
+
+  // Transport lines — auto-fetch from OpenStreetMap
+  fetchAndRenderTransport(n);
+
+  // Services — filter out schools AND transport
+  const excludeKeywords = ['koulu','lukio','yliopisto','ammattikorkeakoulu','ammattiopisto','ammattikoulu',
+    'bussi','pysäkki','asema','metro','raitio','juna','lautta','liikenne'];
+  const filteredSvcs = (n.svcs||[]).filter(s => !excludeKeywords.some(k => s.n.toLowerCase().includes(k)));
+  document.getElementById('dServicesList').innerHTML=filteredSvcs.map(s=>
+    `<div class="svc"><div class="svc-icon">${s.i}</div><div><div class="svc-name">${s.n}</div><div class="svc-detail">${s.d}</div></div><div class="svc-dist">${s.dist}</div></div>`
+  ).join('')||'<p style="font-size:.87rem;color:var(--muted);font-style:italic">Ei lähipalvelutietoja.</p>';
+
+  // Sidebar
+  const a=avg(n);
+  document.getElementById('dSidebarStats').innerHTML=[
+    {l:'Aluetyyppi',v:n.type||'—'},{l:'Julkinen liikenne',v:n.transport||'—'},
+    {l:'Palvelut',v:n.services||'—'},{l:'Arvosteluja',v:n.reviews.length},
+    {l:'Keskiarvosana',v:a?`${a} / 5`:'—'}
+  ].map(s=>`<div class="sb-stat"><span class="sb-label">${s.l}</span><span class="sb-val">${s.v}</span></div>`).join('');
+  document.getElementById('dSidebarTags').innerHTML=(n.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('');
+  document.getElementById('dDesc').textContent=n.desc;
+
+  // Reviews & form
+  renderCatSummary(n);
+  renderReviews(n);
+  document.getElementById('rName').value='';
+  document.getElementById('rText').value='';
+  resetCatPickers();
+
+  // Admin edit panel
+  populateAdminPanel(n);
+
+  // SEO
+  updateSEO(n);
+
+  // Schools from Helsinki servicemap
+  fetchSchools(n.lat||60.1699, n.lng||24.9384);
+}
+
+function updateDetailRating(n) {
+  const a=avg(n);
+  document.getElementById('dRatingNum').textContent=a?`${a} / 5`:'—';
+  document.getElementById('dStars').innerHTML=a?starsHtml(a):'';
+  document.getElementById('dReviewCount').textContent=n.reviews.length?`${n.reviews.length} arvostelua`:'Ole ensimmäinen arvostelija';
+  renderCatSummary(n);
+}
+
+function renderCatSummary(n) {
+  const cont = document.getElementById('dCatSummary');
+  if (!n.reviews.length) { cont.innerHTML=''; return; }
+  const ca = catAvgs(n);
+  const ov = overallAvg(ca);
+  cont.innerHTML = `
+    <div class="overall-card">
+      <div>
+        <div class="overall-label">Kokonaisarvosana</div>
+        <div class="overall-stars">${starsHtml(ov||0,'overall')}</div>
+      </div>
+      <div class="overall-score">${ov?ov.toFixed(1):'—'}</div>
+    </div>
+    <div class="cat-summary">
+      ${CATS.map(c=>{
+        const v=ca[c.key];
+        const pct=v?(v/5*100).toFixed(0):0;
+        return `<div class="cat-card">
+          <div class="cat-card-top">
+            <div><div class="cat-card-label">${c.icon} ${c.label}</div></div>
+            <div class="cat-card-score">${v?v.toFixed(1):'—'}</div>
+          </div>
+          <div class="cat-bar-bg"><div class="cat-bar-fg" style="width:${pct}%"></div></div>
+        </div>`;
+      }).join('')}
+    </div>`;
+}
+
+function renderReviews(n) {
+  const c=document.getElementById('dReviews');
+  if(!n.reviews.length){c.innerHTML='<p class="no-reviews">Ei vielä arvosteluja — ole ensimmäinen!</p>';return;}
+  c.innerHTML=[...n.reviews].reverse().map(r=>{
+    const cats=r.cats||{};
+    const vals=CATS.map(c=>cats[c.key]).filter(v=>v>0);
+    const ov=vals.length?(vals.reduce((s,v)=>s+v,0)/vals.length):r.rating||0;
+    const catBars=CATS.filter(c=>cats[c.key]).map(c=>`
+      <div class="rev-cat">
+        <span class="rev-cat-label">${c.icon} ${c.label}</span>
+        <div class="rev-cat-bar"><div class="rev-cat-fill" style="width:${(cats[c.key]/5*100).toFixed(0)}%"></div></div>
+        <span class="rev-cat-val">${cats[c.key]}</span>
+      </div>`).join('');
+    return `<div class="review-item">
+      <div class="rev-top">
+        <div>
+          <div class="rev-name">${escapeHtml(r.name)}</div>
+          <div class="rev-overall">
+            <div class="rev-overall-num">${ov.toFixed(1)}</div>
+            <div class="rev-stars">${starsHtml(ov)}</div>
+          </div>
+        </div>
+        <div class="rev-date">${fmtDate(r.date)}</div>
+      </div>
+      ${catBars?`<div class="rev-cats">${catBars}</div>`:''}
+      <div class="rev-text">${escapeHtml(r.text)}</div>
+    </div>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════
+// 10. REVIEWS — Arvostelulomake
+// ════════════════════════════════════════════════
+function setCat(key, val) {
+  selCats[key] = val;
+  const row = document.getElementById('cp-' + key);
+  if (row) row.querySelectorAll('.cspick').forEach((b,i) => b.classList.toggle('on', i < val));
+  // update overall preview
+  const vals = Object.values(selCats).filter(v=>v>0);
+  const ov = vals.length ? (vals.reduce((s,v)=>s+v,0)/vals.length).toFixed(1) : '—';
+  document.getElementById('overallPreview').textContent = ov;
+}
+
+function resetCatPickers() {
+  selCats = {palvelut:0,luonto:0,liikenne:0,turvallisuus:0,'lapsiystävällisyys':0};
+  CATS.forEach(c => {
+    const row = document.getElementById('cp-' + c.key);
+    if (row) row.querySelectorAll('.cspick').forEach(b => b.classList.remove('on'));
+  });
+  const prev = document.getElementById('overallPreview');
+  if (prev) prev.textContent = '—';
+}
+
+async function submitReview() {
+  if (isSubmittingReview) return; // duplicate guard
+  const name = document.getElementById('rName').value.trim();
+  const text = document.getElementById('rText').value.trim();
+  if (!name) { toast('Kirjoita nimesi ensin.'); return; }
+  if (name.length > 100) { toast('Nimi on liian pitkä (max 100 merkkiä).'); return; }
+  const filledCats = Object.values(selCats).filter(v=>v>0);
+  if (!filledCats.length) { toast('Anna arvosana vähintään yhdelle kategorialle.'); return; }
+  if (!text) { toast('Kirjoita kommentti ensin.'); return; }
+  if (text.length > 2000) { toast('Kommentti on liian pitkä (max 2000 merkkiä).'); return; }
+  if (!currentId) { toast('Virhe: ei aktiivista naapurustoa.'); return; }
+  const n = hoods.find(x=>x.id===currentId); if (!n) return;
+
+  // Disable submit button
+  isSubmittingReview = true;
+  const btn = document.querySelector('.add-review .submit-btn');
+  if (btn) { btn.disabled = true; btn.textContent = 'Lähetetään...'; btn.style.opacity = '.6'; }
+
+  const ov = filledCats.reduce((s,v)=>s+v,0) / filledCats.length;
+  const review = {name, rating: parseFloat(ov.toFixed(1)), cats:{...selCats}, text, date: new Date().toISOString().slice(0,10)};
+  try {
+    await sbPost('reviews', {neighborhood_id: currentId, ...review});
+    n.reviews.push(review);
+    updateDetailRating(n);
+    renderReviews(n);
+    renderGrid();
+    document.getElementById('rName').value = '';
+    document.getElementById('rText').value = '';
+    resetCatPickers();
+    toast('Arvostelu lisätty! Kiitos.');
+  } catch(e) {
+    toast('Virhe arvostelun tallennuksessa. Yritä uudelleen.');
+  } finally {
+    isSubmittingReview = false;
+    if (btn) { btn.disabled = false; btn.textContent = 'Lähetä arvostelu'; btn.style.opacity = ''; }
+  }
+}
+
+// ════════════════════════════════════════════════
+// 11. NEIGHBORHOODS — Naapuruston lisäys
+// ════════════════════════════════════════════════
+function openAddModal() {
+  document.getElementById('addOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeAddModal(e) {
+  if(e&&e.target!==document.getElementById('addOverlay')&&!e.target.classList.contains('modal-close'))return;
+  document.getElementById('addOverlay').classList.remove('open');document.body.style.overflow='';
+}
+async function submitNeighborhood() {
+  const name=document.getElementById('nName').value.trim();
+  const city=document.getElementById('nCity').value.trim();
+  const desc=document.getElementById('nDesc').value.trim();
+  if(!name||!city||!desc){toast('Täytä pakolliset kentät (*).');return;}
+  const tags=document.getElementById('nTags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  const id=name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-')+'-'+Date.now();
+  const lat=parseFloat(document.getElementById('nLat').value)||60.1699;
+  const lng=parseFloat(document.getElementById('nLng').value)||24.9384;
+  const emoji=document.getElementById('nEmoji').value||'🏘️';
+  const newHood = {
+    id, name, city, description: desc,
+    type: document.getElementById('nType').value,
+    transport: document.getElementById('nTransport').value,
+    services: document.getElementById('nServices').value,
+    tags, emoji, lat, lng,
+    gallery: [emoji,'🏡','🌿','☕','🌆'],
+    prices: [{type:'Yksiö',sqm:3000,rent:700},{type:'Kaksio',sqm:2700,rent:950},{type:'Kolmio+',sqm:2400,rent:1250}],
+    svcs: []
+  };
+  try {
+    await sbPost('neighborhoods', newHood);
+    hoods.push({...newHood, desc, reviews:[]});
+    ['nName','nCity','nDesc','nTags','nEmoji','nLat','nLng'].forEach(i=>document.getElementById(i).value='');
+    closeAddModal();
+    populateCityFilter();
+    renderGrid();
+    toast('Naapurusto lisätty!');
+  } catch(e) {
+    toast('Virhe tallennuksessa. Yritä uudelleen.');
+  }
+}
+
+// ════════════════════════════════════════════════
+// 12. SCHOOLS — Kouludata (Helsinki servicemap API)
+// ════════════════════════════════════════════════
+async function fetchSchools(lat, lng) {
+  const cont = document.getElementById('dSchools');
+  const src  = document.getElementById('schoolsSource');
+  cont.innerHTML = '<div style="font-size:.87rem;color:var(--muted);font-style:italic">Haetaan kouluja...</div>';
+  src.textContent = '';
+
+  function haversine(a, b, c, d) {
+    const R=6371000, dLat=(c-a)*Math.PI/180, dLon=(d-b)*Math.PI/180;
+    const x=Math.sin(dLat/2)**2+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(dLon/2)**2;
+    return Math.round(R*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x)));
+  }
+
+  function getSchoolType(name) {
+    const n = name.toLowerCase();
+    if (n.includes('yliopisto') && !n.includes('amk') && !n.includes('ammattikorkeakoulu'))
+      return {label:'Yliopisto', cls:'yliopisto', icon:'🎓', order:6};
+    if (n.includes('ammattikorkeakoulu') || n.includes(' amk') || n.endsWith('amk'))
+      return {label:'AMK', cls:'amk', icon:'🎓', order:5};
+    if (n.includes('ammattikoulu') || n.includes('ammattiopisto') || n.includes('ammatillinen'))
+      return {label:'Ammattikoulu', cls:'ammattikoulu', icon:'🔧', order:4};
+    if (n.includes('lukio'))
+      return {label:'Lukio', cls:'lukio', icon:'📚', order:3};
+    if (n.includes('yläkoulu') || n.includes('yläaste'))
+      return {label:'Yläkoulu', cls:'ylakoulu', icon:'🏫', order:2};
+    if (n.includes('alakoulu') || n.includes('ala-aste') || n.includes('peruskoulu') || n.includes('koulu'))
+      return {label:'Alakoulu', cls:'alakoulu', icon:'🏫', order:1};
+    return null;
+  }
+
+  try {
+    const searches = ['koulu', 'lukio', 'yliopisto', 'ammattikorkeakoulu', 'ammattiopisto'].map(q =>
+      fetch(`https://api.hel.fi/servicemap/v2/search/?q=${q}&lat=${lat}&lon=${lng}&distance=3000&page_size=15&format=json&language=fi&type=unit`)
+        .then(r => r.ok ? r.json() : {results:[]})
+        .catch(() => ({results:[]}))
+    );
+    const results = await Promise.all(searches);
+    const allUnits = results.flatMap(r => r.results || []);
+
+    // Deduplicate by id
+    const seen = new Set();
+    const units = allUnits.filter(u => {
+      if (!u.id || seen.has(u.id)) return false;
+      seen.add(u.id); return true;
+    });
+
+    const schools = units.map(u => {
+      const name = u.name?.fi || u.name?.sv || u.name?.en || '';
+      const type = getSchoolType(name);
+      if (!type) return null;
+      const coords = u.location?.coordinates;
+      const d = coords ? haversine(lat, lng, coords[1], coords[0]) : null;
+      if (d && d > 3000) return null;
+      return {name, type, d, addr: u.street_address?.fi || '', www: u.www};
+    }).filter(Boolean);
+
+    schools.sort((a,b) => {
+      if (a.type.order !== b.type.order) return a.type.order - b.type.order;
+      return (a.d||9999) - (b.d||9999);
+    });
+
+    if (!schools.length) {
+      cont.innerHTML = '<p style="font-size:.87rem;color:var(--muted);font-style:italic">Ei kouluja 3 km säteellä tai alue ei kuulu palvelukartan piiriin (pääkaupunkiseutu).</p>';
+      return;
+    }
+
+    cont.innerHTML = '<div class="school-list">' +
+      schools.map(s => {
+        const dStr = s.d!=null ? (s.d>=1000?`${(s.d/1000).toFixed(1)} km`:`${s.d} m`) : '—';
+        const link = s.www ? `href="${s.www}" target="_blank" rel="noopener"` : '';
+        return `<a class="school-item" ${link}>
+          <div class="school-icon">${s.type.icon}</div>
+          <div>
+            <div class="school-name">${s.name}<span class="school-type ${s.type.cls}">${s.type.label}</span></div>
+            ${s.addr?`<div class="school-detail">${s.addr}</div>`:''}
+          </div>
+          <div class="school-dist">${dStr}</div>
+        </a>`;
+      }).join('') +
+    '</div><p class="schools-note">Lähde: Helsingin seudun palvelukartta · CC BY 4.0</p>';
+
+    src.textContent = `— ${schools.length} oppilaitosta 3 km säteellä`;
+  } catch(e) {
+    console.error(e);
+    cont.innerHTML = '<p style="font-size:.87rem;color:var(--muted);font-style:italic">Kouludata ei saatavilla. Palvelukartta kattaa pääkaupunkiseudun.</p>';
+  }
+}
+
+// ════════════════════════════════════════════════
+// 13. SEO — Meta-tagit ja schema.org
+// ════════════════════════════════════════════════
+function updateSEO(n) {
+  const a = avg(n);
+  const title = `${n.name}, ${n.city} — Kotikonnut`;
+  const desc = `${n.desc?.slice(0,150)}... Lue asukkaiden arvostelut ja tiedot ${n.name}sta.`;
+  const url = `https://hopeinenquu.github.io/Kotikulmat/#/${n.id}`;
+
+  document.title = title;
+  setMeta('description', desc);
+  setMeta('og:title', title, true);
+  setMeta('og:description', desc, true);
+  setMeta('og:url', url, true);
+  setMeta('twitter:title', title, true);
+  setMeta('twitter:description', desc, true);
+
+  // Schema.org LocalBusiness / Place with AggregateRating
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Place',
+    'name': n.name,
+    'description': n.desc,
+    'url': url,
+    'address': {
+      '@type': 'PostalAddress',
+      'addressLocality': n.city,
+      'addressCountry': 'FI'
+    }
+  };
+  if (a && n.reviews.length) {
+    schema.aggregateRating = {
+      '@type': 'AggregateRating',
+      'ratingValue': a,
+      'bestRating': '5',
+      'worstRating': '1',
+      'reviewCount': n.reviews.length
+    };
+  }
+  if (n.image_urls?.length) schema.image = n.image_urls[0];
+  document.getElementById('schemaNeighborhood').textContent = JSON.stringify(schema);
+}
+
+function resetSEO() {
+  document.title = 'Kotikonnut — Löydä paikkasi';
+  setMeta('description', 'Kotikonnut on suomalainen naapurustojen arvostelupalvelu. Tutustu eri asuinalueisiin, lue asukkaiden kokemuksia ja löydä unelmiesi naapurusto.');
+  setMeta('og:title', 'Kotikonnut — Löydä paikkasi', true);
+  setMeta('og:description', 'Suomalainen naapurustojen arvostelupalvelu.', true);
+  setMeta('og:url', 'https://hopeinenquu.github.io/Kotikulmat/', true);
+  document.getElementById('schemaNeighborhood').textContent = '';
+}
+
+function setMeta(name, content, isProperty=false) {
+  const attr = isProperty ? 'property' : 'name';
+  let el = document.querySelector(`meta[${attr}="${name}"]`);
+  if (!el) { el = document.createElement('meta'); el.setAttribute(attr, name); document.head.appendChild(el); }
+  el.setAttribute('content', content);
+}
+
+// ════════════════════════════════════════════════
+// 14. HERO IMAGE — Etusivun hero-kuva
+// ════════════════════════════════════════════════
+async function loadHeroImage() {
+  try {
+    const res = await sbGet('settings', '?key=eq.hero_image&select=value');
+    if (res.length && res[0].value) {
+      const img = document.getElementById('heroImg');
+      img.src = res[0].value;
+      img.style.display = 'block';
+      // Darken overlay when image present
+      document.getElementById('homeHero').style.background = 'var(--dark)';
+    }
+  } catch(e) {}
+}
+
+async function uploadHeroImage(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  toast('⏳ Ladataan hero-kuvaa...');
+  const ext = file.name.split('.').pop();
+  const path = `hero/hero_${Date.now()}.${ext}`;
+  try {
+    const uploadRes = await fetch(
+      `${SB_URL}/storage/v1/object/kotikulmat-kuvat/${path}`,
+      {method:'POST', headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':file.type}, body:file}
+    );
+    if (!uploadRes.ok) throw new Error(await uploadRes.text());
+    const publicUrl = `${SB_URL}/storage/v1/object/public/kotikulmat-kuvat/${path}`;
+    // Update settings
+    await fetch(`${SB_URL}/rest/v1/settings?key=eq.hero_image`, {
+      method:'PATCH',
+      headers:{'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Prefer':'return=minimal'},
+      body: JSON.stringify({value: publicUrl})
+    });
+    const img = document.getElementById('heroImg');
+    img.src = publicUrl;
+    img.style.display = 'block';
+    toast('Hero-kuva päivitetty! ✓');
+  } catch(e) {
+    console.error(e);
+    toast('Kuvan lataus epäonnistui.');
+  }
+}
+
+// ════════════════════════════════════════════════
+// 15. TRANSPORT — Joukkoliikenne (Overpass / OSM API)
+// ════════════════════════════════════════════════
+const TRANSPORT_TYPES = [
+  {key:'bussi',       label:'Bussi',        icon:'🚌', cls:'bussi',       osm:'bus'},
+  {key:'raitiovaunu', label:'Raitiovaunu',  icon:'🚃', cls:'raitiovaunu', osm:'tram'},
+  {key:'metro',       label:'Metro',        icon:'🚇', cls:'metro',       osm:'subway'},
+  {key:'juna',        label:'Juna',         icon:'🚂', cls:'juna',        osm:'train'},
+  {key:'lautta',      label:'Lautta',       icon:'⛴️',  cls:'lautta',      osm:'ferry'},
+];
+
+async function fetchAndRenderTransport(n) {
+  const cont = document.getElementById('dTransport');
+  const lat = n.lat||60.1699, lon = n.lng||24.9384;
+  cont.innerHTML = '<div style="font-size:.87rem;color:var(--muted);font-style:italic">Haetaan linjatietoja...</div>';
+
+  // Check cache first (keyed by rounded coords)
+  const cacheKey = `${lat.toFixed(3)},${lon.toFixed(3)}`;
+  if (transportCache[cacheKey]) {
+    cont.innerHTML = transportCache[cacheKey];
+    return;
+  }
+
+  try {
+    const query = `[out:json][timeout:15];relation["route"~"^(bus|tram|subway|train|ferry)$"](around:600,${lat},${lon});out tags;`;
+    const res = await fetch('https://overpass-api.de/api/interpreter', {method:'POST', body:query});
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    const elements = data.elements||[];
+
+    // Group by route type, collect unique refs
+    const grouped = {};
+    elements.forEach(el => {
+      const osmRoute = el.tags?.route;
+      const ref = (el.tags?.ref||'').trim();
+      if (!osmRoute||!ref) return;
+      const type = TRANSPORT_TYPES.find(t=>t.osm===osmRoute);
+      if (!type) return;
+      if (!grouped[type.key]) grouped[type.key] = new Set();
+      grouped[type.key].add(ref);
+    });
+
+    // Also merge any manual lines
+    (n.transport_lines||[]).forEach(l => {
+      if (!l.line||!l.type) return;
+      if (!grouped[l.type]) grouped[l.type] = new Set();
+      grouped[l.type].add(l.line.trim());
+    });
+
+    if (!Object.keys(grouped).length) {
+      cont.innerHTML = '<p style="font-size:.87rem;color:var(--muted);font-style:italic">Ei linjatietoja saatavilla tällä alueella.</p>';
+      return;
+    }
+
+    const html = '<div class="transport-types">' +
+      TRANSPORT_TYPES.filter(t=>grouped[t.key]).map(t=>`
+        <div class="transport-type">
+          <div class="transport-type-header">
+            <span class="transport-type-icon">${t.icon}</span>
+            <span class="transport-type-name">${t.label}</span>
+          </div>
+          <div class="transport-lines">
+            ${[...grouped[t.key]].sort((a,b)=>a.localeCompare(b,'fi',{numeric:true})).map(line=>
+              `<span class="transport-line ${t.cls}">${escapeHtml(line)}</span>`
+            ).join('')}
+          </div>
+        </div>`
+      ).join('') +
+    '</div><p class="schools-note">Lähde: OpenStreetMap / HSL · CC BY 4.0</p>';
+
+    cont.innerHTML = html;
+    transportCache[cacheKey] = html; // cache for this session
+
+  } catch(e) {
+    renderManualTransportLines(n);
+  }
+}
+
+function renderManualTransportLines(n) {
+  const lines = n.transport_lines||[];
+  const cont = document.getElementById('dTransport');
+  if (!lines.length) {
+    cont.innerHTML = '<p style="font-size:.87rem;color:var(--muted);font-style:italic">Ei liikennelinjatietoja.</p>';
+    return;
+  }
+  const grouped = {};
+  lines.forEach(l => {
+    if (!grouped[l.type]) grouped[l.type] = [];
+    grouped[l.type].push(l);
+  });
+  cont.innerHTML = '<div class="transport-types">' +
+    TRANSPORT_TYPES.filter(t=>grouped[t.key]).map(t=>`
+      <div class="transport-type">
+        <div class="transport-type-header">
+          <span class="transport-type-icon">${t.icon}</span>
+          <span class="transport-type-name">${t.label}</span>
+        </div>
+        <div class="transport-lines">
+          ${grouped[t.key].map(l=>
+            `<div><span class="transport-line ${t.cls}">${l.line}</span>${l.stop?`<span class="transport-line-stop">${l.stop}</span>`:''}</div>`
+          ).join('')}
+        </div>
+      </div>`
+    ).join('') +
+  '</div>';
+}
+
+function renderTransportEditRows(lines) {
+  document.getElementById('eTransportLines').innerHTML = (lines||[]).map((l,i) =>
+    `<div class="transport-edit-row" id="tRow${i}">
+      <select class="transport-type-select" data-ti="${i}" data-tf="type">
+        ${TRANSPORT_TYPES.map(t => `<option value="${t.key}"${l.type===t.key?' selected':''}>${t.icon} ${t.label}</option>`).join('')}
+      </select>
+      <input class="edit-field" value="${l.line||''}" placeholder="esim. 55" data-ti="${i}" data-tf="line" style="max-width:5rem">
+      <input class="edit-field" value="${l.stop||''}" placeholder="Pysäkki (vapaaehtoinen)" data-ti="${i}" data-tf="stop">
+      <button class="del-btn" onclick="removeTransportRow(${i})">✕</button>
+    </div>`
+  ).join('');
+}
+
+function addTransportRow() {
+  const n = hoods.find(x=>x.id===currentId); if(!n) return;
+  n.transport_lines = [...(n.transport_lines||[]), {type:'bussi',line:'',stop:''}];
+  renderTransportEditRows(n.transport_lines);
+}
+
+function removeTransportRow(i) {
+  const n = hoods.find(x=>x.id===currentId); if(!n) return;
+  n.transport_lines.splice(i,1);
+  renderTransportEditRows(n.transport_lines);
+}
+
+// ════════════════════════════════════════════════
+// 16. ADMIN — Ylläpitäjätoiminnot
+// ════════════════════════════════════════════════
+// TIETOTURVAHUOMIO: Salasana tarkistetaan Supabasesta.
+// Parempi ratkaisu: Supabase Auth tai Edge Function.
+
+function openAdminLogin() {
+  if (isAdmin) { adminLogout(); return; }
+  document.getElementById('adminLoginOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => document.getElementById('adminPwInput').focus(), 100);
+}
+function closeAdminLogin(e) {
+  if (e && e.target !== document.getElementById('adminLoginOverlay') && !e.target.classList.contains('modal-close')) return;
+  document.getElementById('adminLoginOverlay').classList.remove('open');
+  document.getElementById('adminPwInput').value = '';
+  document.body.style.overflow = '';
+}
+/**
+ * Laskee SHA-256 hashin merkkijonosta.
+ * Käytetään salasanan vertailuun — selain hashaa ennen lähetystä,
+ * joten Supabasessa ei tarvitse säilyttää selkokielistä salasanaa.
+ *
+ * PÄIVITYS: Aseta uusi salasana SQL Editorissa:
+ *   UPDATE settings SET value = '<SHA256_HASH>' WHERE key = 'admin_password';
+ * Laske hash esim. osoitteessa: https://emn178.github.io/online-tools/sha256.html
+ */
+async function checkAdminPw() {
+  const pw = document.getElementById('adminPwInput').value.trim();
+  if (!pw) return;
+  try {
+    // Salasana tarkistetaan palvelimella Edge Functionin kautta.
+    // settings-taulu ei ole enää julkisesti luettavissa.
+    const res = await fetch(`${SB_URL}/functions/v1/check-admin-password`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + SB_KEY,
+      },
+      body: JSON.stringify({ password: pw })
+    });
+    const data = await res.json();
+    if (res.status === 429) {
+      toast(data.error || 'Liian monta yritystä. Yritä 15 min kuluttua.');
+      return;
+    }
+    if (data.success) {
+      isAdmin = true;
+      sessionStorage.setItem('kulmilla_admin', '1');
+      document.getElementById('adminLoginOverlay').classList.remove('open');
+      document.getElementById('adminPwInput').value = '';
+      document.body.style.overflow = '';
+      document.getElementById('adminBar').style.display = 'block';
+      document.getElementById('heroUploadBtn').style.display = 'block';
+      updateNav(!!currentId);
+      if (currentId) showDetail(currentId);
+      toast('Tervetuloa ylläpitäjä! ✓');
+    } else {
+      toast('Väärä salasana.');
+    }
+  } catch(e) { toast('Kirjautumisvirhe.'); }
+}
+
+function adminLogout() {
+  isAdmin = false;
+  sessionStorage.removeItem('kulmilla_admin');
+  document.getElementById('adminBar').style.display = 'none';
+  document.getElementById('adminEditPanel').style.display = 'none';
+  document.getElementById('heroUploadBtn').style.display = 'none';
+  updateNav(!!currentId);
+  if (currentId) showDetail(currentId);
+  toast('Kirjauduttu ulos.');
+}
+
+function populateAdminPanel(n) {
+  if (!isAdmin) { document.getElementById('adminEditPanel').style.display='none'; return; }
+  document.getElementById('adminEditPanel').style.display = 'block';
+  document.getElementById('eName').value = n.name || '';
+  document.getElementById('eCity').value = n.city || '';
+  document.getElementById('eDesc').value = n.desc || '';
+  document.getElementById('eEmoji').value = n.emoji || '';
+  document.getElementById('eTags').value = (n.tags||[]).join(', ');
+  document.getElementById('eLat').value = n.lat || '';
+  document.getElementById('eLng').value = n.lng || '';
+  // Set selects
+  ['eType','eTransport','eServices'].forEach(id => {
+    const el = document.getElementById(id);
+    const val = id==='eType' ? n.type : id==='eTransport' ? n.transport : n.services;
+    [...el.options].forEach(o => o.selected = o.value === val);
+  });
+  // Prices
+  document.getElementById('ePrices').innerHTML = (n.prices||[]).map((p,i) =>
+    `<div class="price-edit-row">
+      <input class="edit-field" value="${p.type}" placeholder="Tyyppi" data-pi="${i}" data-pf="type">
+      <input class="edit-field" type="number" value="${p.sqm}" placeholder="€/m²" data-pi="${i}" data-pf="sqm">
+      <input class="edit-field" type="number" value="${p.rent}" placeholder="€/kk" data-pi="${i}" data-pf="rent">
+    </div>`
+  ).join('');
+  // Services
+  renderSvcEditRows(n.svcs||[]);
+  // Transport lines
+  renderTransportEditRows(n.transport_lines||[]);
+}
+
+function renderSvcEditRows(svcs) {
+  document.getElementById('eSvcs').innerHTML = svcs.map((s,i) =>
+    `<div class="svc-edit-row" id="svcRow${i}">
+      <input class="edit-field" value="${s.i||''}" placeholder="🏫" data-si="${i}" data-sf="i">
+      <input class="edit-field" value="${s.n||''}" placeholder="Nimi" data-si="${i}" data-sf="n">
+      <input class="edit-field" value="${s.d||''}" placeholder="Kuvaus" data-si="${i}" data-sf="d">
+      <input class="edit-field" value="${s.dist||''}" placeholder="Etäisyys" data-si="${i}" data-sf="dist">
+      <button class="del-btn" onclick="removeSvcRow(${i})">✕</button>
+    </div>`
+  ).join('');
+}
+
+function addSvcRow() {
+  const n = hoods.find(x=>x.id===currentId);
+  if (!n) return;
+  n.svcs = [...(n.svcs||[]), {i:'📍',n:'',d:'',dist:''}];
+  renderSvcEditRows(n.svcs);
+}
+
+function removeSvcRow(i) {
+  const n = hoods.find(x=>x.id===currentId);
+  if (!n) return;
+  n.svcs.splice(i,1);
+  renderSvcEditRows(n.svcs);
+}
+
+async function saveAdminEdits() {
+  const n = hoods.find(x=>x.id===currentId);
+  if (!n) return;
+
+  // Collect basic fields
+  n.name     = document.getElementById('eName').value.trim();
+  n.city     = document.getElementById('eCity').value.trim();
+  n.desc     = document.getElementById('eDesc').value.trim();
+  n.emoji    = document.getElementById('eEmoji').value.trim();
+  n.tags     = document.getElementById('eTags').value.split(',').map(t=>t.trim()).filter(Boolean);
+  n.lat      = parseFloat(document.getElementById('eLat').value)||n.lat;
+  n.lng      = parseFloat(document.getElementById('eLng').value)||n.lng;
+  n.type     = document.getElementById('eType').value;
+  n.transport= document.getElementById('eTransport').value;
+  n.services = document.getElementById('eServices').value;
+
+  // Collect prices
+  const priceInputs = document.querySelectorAll('#ePrices [data-pi]');
+  const prices = [];
+  priceInputs.forEach(inp => {
+    const i = parseInt(inp.dataset.pi), f = inp.dataset.pf;
+    if (!prices[i]) prices[i] = {};
+    prices[i][f] = f==='type' ? inp.value : parseFloat(inp.value)||0;
+  });
+  n.prices = prices.filter(Boolean);
+
+  // Collect svcs
+  const svcInputs = document.querySelectorAll('#eSvcs [data-si]');
+  const svcs = [];
+  svcInputs.forEach(inp => {
+    const i = parseInt(inp.dataset.si), f = inp.dataset.sf;
+    if (!svcs[i]) svcs[i] = {};
+    svcs[i][f] = inp.value;
+  });
+  n.svcs = svcs.filter(Boolean);
+
+  // Collect transport lines
+  const tInputs = document.querySelectorAll('#eTransportLines [data-ti]');
+  const tlines = [];
+  tInputs.forEach(inp => {
+    const i = parseInt(inp.dataset.ti), f = inp.dataset.tf;
+    if (!tlines[i]) tlines[i] = {};
+    tlines[i][f] = inp.value;
+  });
+  n.transport_lines = tlines.filter(Boolean);
+
+  try {
+    await fetch(`${SB_URL}/rest/v1/neighborhoods?id=eq.${currentId}`, {
+      method:'PATCH',
+      headers:{'Content-Type':'application/json','apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Prefer':'return=minimal'},
+      body: JSON.stringify({
+        name:n.name, city:n.city, description:n.desc, emoji:n.emoji,
+        tags:n.tags, lat:n.lat, lng:n.lng, type:n.type,
+        transport:n.transport, services:n.services,
+        prices:n.prices, svcs:n.svcs,
+        transport_lines:n.transport_lines
+      })
+    });
+    showDetail(currentId);
+    renderGrid();
+    populateCityFilter();
+    toast('Muutokset tallennettu! ✓');
+  } catch(e) { toast('Tallennusvirhe. Yritä uudelleen.'); }
+}
+
+// ════════════════════════════════════════════════
+// 16b. CONFIRM MODAL — korvaa selaimen confirm()
+// ════════════════════════════════════════════════
+let _confirmResolve = null;
+
+function showConfirm(title, msg) {
+  return new Promise(resolve => {
+    _confirmResolve = resolve;
+    document.getElementById('confirmTitle').textContent = title;
+    document.getElementById('confirmMsg').textContent = msg;
+    document.getElementById('confirmOkBtn').onclick = () => { closeConfirm(); resolve(true); };
+    document.getElementById('confirmOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+function closeConfirm() {
+  document.getElementById('confirmOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+  if (_confirmResolve) { _confirmResolve(false); _confirmResolve = null; }
+}
+
+async function deleteNeighborhood() {
+  const n = hoods.find(x=>x.id===currentId);
+  if (!n) return;
+
+  const confirmed = await showConfirm(
+    'Poista naapurusto',
+    `Haluatko varmasti poistaa "${escapeHtml(n.name)}"? Kaikki arvostelut poistetaan pysyvästi. Tätä ei voi perua.`
+  );
+  if (!confirmed) return;
+
+  try {
+    // 1. Poista kuvat Storagesta
+    if (n.image_urls && n.image_urls.length) {
+      const fileKeys = n.image_urls.map(url => {
+        // Extract path after /public/kotikulmat-kuvat/
+        const match = url.match(/\/public\/kotikulmat-kuvat\/(.+)$/);
+        return match ? match[1] : null;
+      }).filter(Boolean);
+
+      if (fileKeys.length) {
+        await fetch(`${SB_URL}/storage/v1/object/kotikulmat-kuvat`, {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SB_KEY,
+            'Authorization': 'Bearer ' + SB_KEY,
+          },
+          body: JSON.stringify({prefixes: fileKeys})
+        });
+      }
+    }
+
+    // 2. Poista tietokannasta (arvostelut poistetaan CASCADE:lla)
+    const res = await fetch(`${SB_URL}/rest/v1/neighborhoods?id=eq.${currentId}`, {
+      method: 'DELETE',
+      headers: {'apikey': SB_KEY, 'Authorization': 'Bearer ' + SB_KEY}
+    });
+    if (!res.ok) throw new Error(await res.text());
+
+    hoods = hoods.filter(x => x.id !== currentId);
+    navigate('/');
+    renderGrid();
+    populateCityFilter();
+    toast('Naapurusto poistettu.');
+  } catch(e) {
+    console.error(e);
+    toast('Poistaminen epäonnistui. Yritä uudelleen.');
+  }
+}
+
+// ════════════════════════════════════════════════
+// 17. IMAGES — Kuvien lataus ja lightbox
+// ════════════════════════════════════════════════
+async function uploadImage(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  // Validate currentId
+  if (!currentId) { toast('Virhe: ei aktiivista naapurustoa.'); return; }
+
+  // Validate file type
+  const allowed = ['image/jpeg','image/png','image/webp','image/gif'];
+  if (!allowed.includes(file.type)) {
+    toast('Vain JPG, PNG, WebP ja GIF -tiedostot ovat sallittuja.');
+    event.target.value = '';
+    return;
+  }
+
+  // Validate file size (max 8MB)
+  const MAX_MB = 8;
+  if (file.size > MAX_MB * 1024 * 1024) {
+    toast(`Kuva on liian suuri. Maksimikoko on ${MAX_MB} MB.`);
+    event.target.value = '';
+    return;
+  }
+
+  const n = hoods.find(x=>x.id===currentId);
+  if (!n) return;
+
+  const progress = document.getElementById('uploadProgress');
+  progress.textContent = '⏳ Ladataan kuvaa...';
+
+  const ext = file.name.split('.').pop().toLowerCase();
+  const safeId = currentId.replace(/[^a-z0-9-]/g, '');
+  const path = `${safeId}/${Date.now()}.${ext}`;
+
+  try {
+    // Upload to Supabase Storage
+    const uploadRes = await fetch(
+      `${SB_URL}/storage/v1/object/kotikulmat-kuvat/${path}`,
+      { method:'POST', headers:{'apikey':SB_KEY,'Authorization':'Bearer '+SB_KEY,'Content-Type':file.type}, body:file }
+    );
+    if (!uploadRes.ok) throw new Error(await uploadRes.text());
+
+    // Get public URL
+    const publicUrl = `${SB_URL}/storage/v1/object/public/kotikulmat-kuvat/${path}`;
+
+    // Update image_urls in database
+    const newUrls = [...(n.image_urls||[]), publicUrl];
+    const patchRes = await fetch(
+      `${SB_URL}/rest/v1/neighborhoods?id=eq.${currentId}`,
+      { method:'PATCH',
+        headers:{
+          'Content-Type': 'application/json',
+          'apikey': SB_KEY,
+          'Authorization': 'Bearer ' + SB_KEY,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({image_urls: newUrls})
+      }
+    );
+    if (!patchRes.ok) {
+      const errText = await patchRes.text();
+      throw new Error(errText);
+    }
+
+    // Update local state and re-render
+    n.image_urls = newUrls;
+    showDetail(currentId);
+    progress.textContent = '✅ Kuva lisätty!';
+    setTimeout(()=>progress.textContent='', 3000);
+    renderGrid();
+  } catch(e) {
+    console.error(e);
+    progress.textContent = '❌ Kuvan lataus epäonnistui.';
+  }
+}
+
+// ═══════════ LIGHTBOX ═══════════
+function openLightbox(src, isImage) {
+  const inner = document.getElementById('lbInner');
+  if (isImage) {
+    inner.style.background='#000';
+    inner.innerHTML=`<img class="lb-img" src="${src}" alt="Kuva">`;
+  } else {
+    inner.style.background=src; // src is a gradient color in emoji mode
+    inner.innerHTML=`<span style="font-size:8rem;filter:drop-shadow(0 4px 20px rgba(0,0,0,.5))">${src}</span>`;
+  }
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+
+// ════════════════════════════════════════════════
+// 18. INIT — Sovelluksen käynnistys
+// ════════════════════════════════════════════════
+if (sessionStorage.getItem('kulmilla_admin')) {
+  isAdmin = true;
+  document.getElementById('adminBar').style.display = 'block';
+  document.getElementById('heroUploadBtn').style.display = 'block';
+}
+loadHeroImage();
+loadData();
+</script>
+</body>
+</html>
