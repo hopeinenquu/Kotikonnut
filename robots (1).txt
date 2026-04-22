@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kortteliopas.fi/sitemap.xml
