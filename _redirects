@@ -1,2 +1,1 @@
-# Cloudflare Pages SPA fallback (kaikki polut → index.html 200-statuksella)
-/*  /index.html  200
+/sitemap.xml /sitemap.xml 200
